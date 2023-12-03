@@ -57,4 +57,81 @@ error: src refspec master does not match any
 [31merror: failed to push some refs to 'https://github.com/amyxchen3/revised-EDA.git'
 [m]0;/home/r1755190~$ git condig[K[K[Kfig --global user.email amyxc[K[Kc[K.chen3@emr[Kory.edu
 ]0;/home/r1755190~$ git config --global user.an[K[Kname amyxchen3
-]0;/home/r1755190~$ 
+]0;/home/r1755190~$ git add .
+]0;/home/r1755190~$ git commit -m "Initial commit"
+[master (root-commit) f02020a] Initial commit
+ 67 files changed, 5352 insertions(+)
+ create mode 100644 .config/R/rsconnect/accounts/posit.cloud/Amy Chen.dcf
+ create mode 100644 .config/R/rsconnect/deployments/history.dcf
+ create mode 100644 .config/rstudio/rstudio-prefs.json
+ create mode 100644 .gitconfig
+ create mode 100644 .rsconnect-python/servers.json
+ create mode 100644 .rstudio/addin_registry
+ create mode 100644 .rstudio/client-state/environment-grid.persistent
+ create mode 100644 .rstudio/client-state/rsconnect.persistent
+ create mode 100644 .rstudio/client-state/source-column-manager.persistent
+ create mode 100644 .rstudio/client-state/themes.persistent
+ create mode 100644 .rstudio/client-state/workbenchp.persistent
+ create mode 100644 .rstudio/history_database
+ create mode 100644 .rstudio/log/rsession-r1755190.log
+ create mode 100644 .rstudio/monitored/lists/command_palette_mru
+ create mode 100644 .rstudio/monitored/lists/file_mru
+ create mode 100644 .rstudio/monitored/lists/help_history_links
+ create mode 100644 .rstudio/monitored/lists/plot_publish_mru
+ create mode 100644 .rstudio/monitored/lists/project_mru
+ create mode 100644 .rstudio/monitored/lists/user_dictionary
+ create mode 100644 .rstudio/projects/1e37a59e/console07/390541CC
+ create mode 100644 .rstudio/projects/1e37a59e/console07/390541CC.env
+ create mode 100644 .rstudio/projects/1e37a59e/console07/INDEX001
+ create mode 100644 .rstudio/projects_settings/last-project-path
+ create mode 100755 .rstudio/projects_settings/next-session-project
+ create mode 100644 .rstudio/projects_settings/project-id-mappings
+ create mode 100644 .rstudio/projects_settings/update-pkg-install-default
+ create mode 100644 .rstudio/rstudio-server.json
+ create mode 100644 .rstudio/rversion-settings/9fdb61e37a59e-RVersion
+ create mode 100644 .rstudio/rversion-settings/9fdb61e37a59e-RVersionHome
+ create mode 100644 .rstudio/rversion-settings/9fdb61e37a59e-RVersionLabel
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/graphics-r3/INDEX
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/graphics-r3/empty.png
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/activity_state
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/blocking_suspend
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/created
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/editor
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/executing
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/initial
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/label
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/last-used
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/last_resumed
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/last_state_updated
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/launch-parameters
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/project
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/r-version
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/r-version-home
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/r-version-label
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/running
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/save_prompt_required
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/suspend_timestamp
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/properites/working-dir
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/rmd-outputs
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/session-persistent-state
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/suspended-session-data/console_actions
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/suspended-session-data/environment
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/suspended-session-data/environment_vars
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/suspended-session-data/history
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/suspended-session-data/libpaths
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/suspended-session-data/options
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/suspended-session-data/rversion
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/suspended-session-data/search_path/package_paths
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/suspended-session-data/search_path/search_path_elements
+ create mode 100644 .rstudio/sessions/active/session-e9c2325f/suspended-session-data/settings
+ create mode 100644 .subversion/README.txt
+ create mode 100644 .subversion/config
+ create mode 100644 .subversion/servers
+ create mode 120000 R
+]0;/home/r1755190~$ git push -u origin master
+Username for 'https://github.com': amyxchen3
+Password for 'https://amyxchen3@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/amyxchen3/revised-EDA.git/'
+]0;/home/r1755190~$ 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[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kh[Kgit add .
