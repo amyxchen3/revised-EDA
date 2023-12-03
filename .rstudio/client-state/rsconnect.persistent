@@ -1,0 +1,14 @@
+{
+    "rsconnectDirectories": {
+        "dir_map": {
+            "/cloud/project": {
+                "name": "eda_code_notebook",
+                "title": "EDA_Code_Notebook",
+                "appId": null,
+                "account": "Amy Chen",
+                "server": "posit.cloud",
+                "url": ""
+            }
+        }
+    }
+}

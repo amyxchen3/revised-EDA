@@ -1,0 +1,60 @@
+[K/cloud/project$ cd
+]0;/home/r1755190~$ git init
+Initialized empty Git repository in /cloud/home/r1755190/.git/
+]0;/home/r1755190~$ git remote add origin https://github.com/amyxchen3/revised-EDA.git
+]0;/home/r1755190~$ git pull origin master
+fatal: couldn't find remote ref master
+]0;/home/r1755190~$ git add .
+]0;/home/r1755190~$ git commit -m "Initial commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'r1755190@application-7600112-deployment-16033331-vf2wm.(none)')
+]0;/home/r1755190~$ git push -u origin master
+error: src refspec master does not match any
+[31merror: failed to push some refs to 'https://github.com/amyxchen3/revised-EDA.git'
+[m]0;/home/r1755190~$ git add .
+]0;/home/r1755190~$ git commit -m "Initial commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'r1755190@application-7600112-deployment-16033331-vf2wm.(none)')
+]0;/home/r1755190~$ git push -u origin master
+error: src refspec master does not match any
+[31merror: failed to push some refs to 'https://github.com/amyxchen3/revised-EDA.git'
+[m]0;/home/r1755190~$ git add .
+]0;/home/r1755190~$ git commit -m "Initial commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'r1755190@application-7600112-deployment-16033331-vf2wm.(none)')
+]0;/home/r1755190~$ git push -u origin master
+error: src refspec master does not match any
+[31merror: failed to push some refs to 'https://github.com/amyxchen3/revised-EDA.git'
+[m]0;/home/r1755190~$ git condig[K[K[Kfig --global user.email amyxc[K[Kc[K.chen3@emr[Kory.edu
+]0;/home/r1755190~$ git config --global user.an[K[Kname amyxchen3
+]0;/home/r1755190~$ 

@@ -1,0 +1,1492 @@
+1668185839920:library(ggmap)
+1668185855613:library(ggplot2)
+1668185946116:install.packages(ggplot2)
+1668185962163:install.packages("ggplot2")
+1696211894291:install.packages('tidyverse')
+1696211956018:install.packages(lubridate)
+1696211968443:install,packages('lubridate')
+1696211977726:install.packages('lubridate')
+1696265159738:netflix <- read.csv("netflix_titles.csv")
+1696265186533:# Overview of Data
+1696265207916:head(netflix)
+1696265268079:# director and country contain blank cells
+1696265278980:summary(netflix)
+1696265368689:# date added is a character variable
+1696265374982:str(netflix)
+1696265399404:## Data Cleaning
+1696277062358:knitr::opts_chunk$set(echo = TRUE)
+1696277062464:netflix <- read.csv("netflix_titles.csv")
+1696277099443:head(netflix)
+1696277167082:summary(netflix)
+1696278608639:knitr::opts_chunk$set(echo = TRUE)
+1696278608785:recent_grads <- read.csv("recent-grads.csv")
+1696278691605:knitr::opts_chunk$set(echo = TRUE)
+1696278691684:head(recent_grads) # director and country contains blank elements
+1696278747364:head(recent_grads)
+1696278769534:summary(recent_grads) # release year and
+1696278885979:str(recent_grads)
+1696280843349:knitr::opts_chunk$set(echo = TRUE)
+1696280843469:ggplot(recent_grads, aes(x=major_code))+
+1696280843470:geom_bar()
+1696280862438:library(tidyverse)
+1696280877718:ggplot(recent_grads, aes(x=major_code))+
+1696280877719:geom_bar()
+1696280897520:ggplot(recent_grads, aes(x=Major_category))+
+1696280897522:geom_bar()
+1696280911120:ggplot(recent_grads, aes(x=Major_category))+
+1696280911121:geom_bar()+
+1696280911122:coord_flip()
+1696280954369:ggplot(recent_grads, aes(x=Major_category))+
+1696280954370:geom_bar()+
+1696280954370:coord_flip()+
+1696280954371:xlab("Number of Majors in Category")+
+1696280954372:ylab("Major Category")
+1696281093451:ggplot(recent_grads, aes(x=Major_category))+
+1696281093451:geom_bar()+
+1696281093452:coord_flip()+
+1696281093454:labs(x="Number of Majors in Category", y = "Major Category")
+1696281106676:ggplot(recent_grads, aes(x=Major_category))+
+1696281106677:geom_bar()+
+1696281106677:coord_flip()+
+1696281106678:labs(x="Number of Majors in Category", y = "Major Category")
+1696281135775:ggplot(recent_grads, aes(x=Major_category))+
+1696281135776:geom_bar()+
+1696281135777:labs(x="Number of Majors in Category", y = "Major Category")
+1696281175542:ggplot(recent_grads, aes(x=Major_category))+
+1696281175543:geom_bar()+
+1696281175544:labs(title = "Bar Plot of Majors in Each Category", x="Number of Majors in Category", y = "Major Category")
+1696281179557:ggplot(recent_grads, aes(x=Major_category))+
+1696281179558:geom_bar()+
+1696281179559:labs(title = "Bar Plot of Majors in Each Category", x="Number of Majors in Category", y = "Major Category")
+1696281187873:ggplot(recent_grads, aes(x=Major_category))+
+1696281187874:geom_bar()+
+1696281187875:labs(title = "Bar Plot of Majors in Each Category", x="Number of Majors in Category", y = "Major Category")+
+1696281187876:coord_flip()
+1696281234045:ggplot(recent_grads, aes(x=Major_category))+
+1696281234046:geom_bar()+
+1696281234047:coord_flip()+
+1696281234049:xlab("Number of Specific Majors in Each Category")+
+1696281234050:ylab("Major Categories")
+1696281249206:ggplot(recent_grads, aes(x=Major_category))+
+1696281249207:geom_bar()+
+1696281249208:coord_flip()+
+1696281249209:xlab("Number of Specific Majors in Each Category")+
+1696281249210:ylab("Major Categories")
+1696281264997:ggplot(recent_grads, aes(x=Major_category))+
+1696281264998:geom_bar()+
+1696281264999:xlab("Number of Specific Majors in Each Category")+
+1696281264999:ylab("Major Categories")
+1696281288207:ggplot(recent_grads, aes(x=Major_category))+
+1696281288207:geom_bar()+
+1696281288208:xlab("Number of Specific Majors in Each Category")+
+1696281288209:ylab("Major Categories")+
+1696281288210:coord_fip()# why is this flipped?
+1696281294714:ggplot(recent_grads, aes(x=Major_category))+
+1696281294715:geom_bar()+
+1696281294715:xlab("Number of Specific Majors in Each Category")+
+1696281294716:ylab("Major Categories")+
+1696281294717:coord_flip()# why is this flipped?
+1696281520022:ggplot(recent_grads, aes(x = Major_category, y = Total))+
+1696281520023:geom_bar()
+1696281549525:ggplot(recent_grads, aes(x = Major_category, y = Total))+
+1696281549526:geom_boxplot()
+1696281563292:ggplot(recent_grads, aes(x = Major_category, y = Total))+
+1696281563293:geom_boxplot()+
+1696281563294:coord_flip()
+1696281647637:ggplot(recent_grads, aes(x = Major_category, y = Total))+
+1696281647638:geom_bar()+
+1696281647638:coord_flip()
+1696281658488:ggplot(recent_grads, aes(x = Major_category, y = Total))+
+1696281658489:geom_bar(stat = "summary")+
+1696281658490:coord_flip()
+1696281773580:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1696281773581:geom_bar(stat = "summary")+
+1696281773582:coord_flip()
+1696281781120:ggplot(recent_grads, aes(x = reorder(Major_category, Total), y = Total))+
+1696281781121:geom_bar(stat = "summary")+
+1696281781122:coord_flip()
+1696281786255:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1696281786256:geom_bar(stat = "summary")+
+1696281786257:coord_flip()
+1696285063678:knitr::opts_chunk$set(echo = TRUE)
+1696285063690:library(tidyverse)
+1696285063764:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1696285063765:geom_bar(stat = "summary")+
+1696285063765:coord_flip()
+1696285195471:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1696285195472:geom_bar(stat = "summary")+
+1696285195472:coord_flip()+
+1696285195473:xlab("Number of Students")+
+1696285195475:ylab("Major Category")
+1696285212230:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1696285212230:geom_bar(stat = "summary")+
+1696285212231:coord_flip()+
+1696285212232:xlab("Major Category")+
+1696285212233:ylab("Number of Students")
+1696285395456:na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+1696285395459:print(na_counts)
+1696285654063:ggplot(recent_grads, aes(x= Major_category), y = Employed)+
+1696285654064:geom_bar(stat= "summary")
+1696285673641:ggplot(recent_grads, aes(x= Major_category), y = Employed))+
+1696285681973:ggplot(recent_grads, aes(x= Major_category, y = Employed))+
+1696285681974:geom_bar(stat= "summary")
+1696285694484:ggplot(recent_grads, aes(x= Major_category, y = Employed))+
+1696285694484:geom_bar(stat= "summary")+
+1696285694485:coord_flip()
+1696285709770:ggplot(recent_grads, aes(x= (Major_category, -Employed), y = Employed))+
+1696285720547:ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+1696285720548:geom_bar(stat= "summary")+
+1696285720549:coord_flip()
+1696286107161:ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+1696286107162:geom_bar(stat= "summary")+
+1696286107163:coord_flip()+
+1696286107163:xlab("Major Category")+
+1696286107164:ylab("Number of Graduates")
+1696286621665:top_10_salary <- recent_grads %>%
+1696286621666:arrange(desc(Median)) %>%
+1696286621667:head(10)
+1696286621682:print(top_10_salary)
+1696286686584:top_10_salary <- recent_grads %>%
+1696286686585:select(Major, Median) %>%
+1696286686586:arrange(desc(Median)) %>%
+1696286686587:head(10)
+1696286686596:print(top_10_salary)
+1696287969954:ggplot(recent_grads, aes(x= reorder(Major_category, -Median), y = Median))+
+1696287969955:geom_bar()
+1696287988059:geom_bar(stat='summary)
+1696287997142:ggplot(recent_grads, aes(x= reorder(Major_category, -Median), y = Median))+
+1696287997143:geom_bar(stat='summary')
+1696288026413:ggplot(recent_grads, aes(x= reorder(Major_category, -Median), y = Median))+
+1696288026414:geom_bar(stat="summary")
+1696288035533:ggplot(recent_grads, aes(x= reorder(Major_category, -Median), y = Median))+
+1696288035534:geom_bar(stat="summary")+
+1696288035535:coord_flip()
+1696290264197:knitr::opts_chunk$set(echo = TRUE)
+1696290264201:library(tidyverse)
+1696290264293:glimpse(recent_grads$Median)
+1696290776409:glimpse(recent_grads$Median)
+1696290776411:# regrouping values into new levels
+1696290776411:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1696290776412:"30-50k", "50-70K", "70-90K","90K and above"))
+1696290776422:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1696290776434:recent_grads$Median_levels[recent_grads$Median>=300000 & recent_grads$Median<50000] <- "30-50K"
+1696290776435:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<700000] <- "50-70K"
+1696290776444:recent_grads$Median_levels[recent_grads$Median>= 700000 & recent_grads$Median <900000] <- "70-90K"
+1696290776445:recent_grads$Median_levels[recent_grads$Median>= 900000] <- "90K and Above"
+1696290776447:recent_grad_salary_rangs <- recent_grads[!is.na(recent_grads$Median_levels),]
+1696290826739:glimpse(recent_grads$Median)
+1696290826742:# regrouping values into new levels
+1696290826743:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1696290826743:"30-50k", "50-70K", "70-90K","90K and above"))
+1696290826753:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1696290826772:recent_grads$Median_levels[recent_grads$Median>=300000 & recent_grads$Median<50000] <- "30-50K"
+1696290826773:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<700000] <- "50-70K"
+1696290826782:recent_grads$Median_levels[recent_grads$Median>= 700000 & recent_grads$Median <900000] <- "70-90K"
+1696290826783:recent_grads$Median_levels[recent_grads$Median>= 900000] <- "90K and Above"
+1696290826784:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1696290964979:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1696290964980:geom_bar(stat = "summary")+
+1696290964981:facet_wrap(~Median_levels)
+1696358028929:knitr::opts_chunk$set(echo = TRUE)
+1696358028936:library(tidyverse)
+1696358029042:glimpse(recent_grads$Median)
+1696358029045:# regrouping values into new levels
+1696358029046:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1696358029047:"30-50k", "50-70K", "70-90K","90K and above"))
+1696358029063:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1696358029074:recent_grads$Median_levels[recent_grads$Median>=30000 & recent_grads$Median<50000] <- "30-50K"
+1696358029096:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<70000] <- "50-70K"
+1696358029105:recent_grads$Median_levels[recent_grads$Median>= 700000 & recent_grads$Median <90000] <- "70-90K"
+1696358029106:recent_grads$Median_levels[recent_grads$Median>= 900000] <- "90K and Above"
+1696358029108:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1696358029117:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1696358029118:geom_bar(stat = "summary")+
+1696358029119:facet_wrap(~Median_levels)
+1696358053844:glimpse(recent_grads$Median)
+1696358053846:# regrouping values into new levels
+1696358053847:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1696358053848:"30-50k", "50-70K", "70-90K","90K and above"))
+1696358053859:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1696358053868:recent_grads$Median_levels[recent_grads$Median>=30000 & recent_grads$Median<50000] <- "30-50K"
+1696358053878:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<70000] <- "50-70K"
+1696358053888:recent_grads$Median_levels[recent_grads$Median>= 70000 & recent_grads$Median <90000] <- "70-90K"
+1696358053907:recent_grads$Median_levels[recent_grads$Median>= 90000] <- "90K and Above"
+1696358053916:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1696358053926:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1696358053927:geom_bar(stat = "summary")+
+1696358053929:facet_wrap(~Median_levels)
+1696358091338:glimpse(recent_grads$Median)
+1696358091340:# regrouping values into new levels
+1696358091341:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1696358091342:"30-50k", "50-70K", "70-90K","90K and above"))
+1696358091352:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1696358091362:recent_grads$Median_levels[recent_grads$Median>=30000 & recent_grads$Median<50000] <- "30-50K"
+1696358091371:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<70000] <- "50-70K"
+1696358091380:recent_grads$Median_levels[recent_grads$Median>= 70000 & recent_grads$Median <90000] <- "70-90K"
+1696358091407:recent_grads$Median_levels[recent_grads$Median>= 90000] <- "90K and Above"
+1696358091416:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1696358091427:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1696358091428:geom_bar(stat = "summary")+
+1696358091429:coord_flip()+
+1696358091430:facet_wrap(~Median_levels)
+1696364046034:knitr::opts_chunk$set(echo = TRUE)
+1696364046037:library(tidyverse)
+1696364046120:glimpse(recent_grads$Median)
+1696364046122:# regrouping values into new levels
+1696364046123:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c(
+1696364046124:"Under 50k", "50-70K", "70-90K","90K and above"))
+1696364046134:recent_grads$Median_levels[recent_grads$Median<50000] <- "Under 50K"
+1696364046143:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<70000] <- "50-70K"
+1696364046152:recent_grads$Median_levels[recent_grads$Median>= 70000 & recent_grads$Median <90000] <- "70-90K"
+1696364046162:recent_grads$Median_levels[recent_grads$Median>= 90000] <- "90K and Above"
+1696364046178:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1696364046189:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1696364046190:geom_bar(stat = "summary")+
+1696364046191:coord_flip()+
+1696364046192:facet_wrap(~Median_levels)
+1696364117140:glimpse(recent_grads$Median)
+1696364117142:# regrouping values into new levels
+1696364117143:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1696364117144:"30-50k", "50-70K", "70-90K","90K and above"))
+1696364117163:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1696364117173:recent_grads$Median_levels[recent_grads$Median>=30000 & recent_grads$Median<50000] <- "30-50K"
+1696364117183:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<70000] <- "50-70K"
+1696364117192:recent_grads$Median_levels[recent_grads$Median>= 70000 & recent_grads$Median <90000] <- "70-90K"
+1696364117201:recent_grads$Median_levels[recent_grads$Median>= 90000] <- "90K and Above"
+1696364117211:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1696364117220:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1696364117221:geom_bar(stat = "summary")+
+1696364117222:coord_flip()+
+1696364117223:facet_wrap(~Median_levels)
+1696466156911:knitr::opts_chunk$set(echo = TRUE)
+1696466156914:library(tidyverse)
+1696466157001:ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+1696466157002:geom_bar(stat= "summary")+
+1696466157003:coord_flip()+
+1696466157004:xlab("Major Category")+
+1696466157004:ylab("Number of Employed Graduates")
+1696466223894:top_10_salary <- recent_grads %>%
+1696466223895:select(Major, Median) %>%
+1696466223896:arrange(desc(Median)) %>%
+1696466223897:head(10)
+1696466223913:print(top_10_salary)
+1696466223919:ggplot(recent_grads, aes(x= reorder(Major_category, -Median), y = Median))+
+1696466223919:geom_bar(stat="summary")+
+1696466223920:xlab("Major Category")
+1696466224147:coord_flip()
+1696466240996:top_10_salary <- recent_grads %>%
+1696466240997:select(Major, Median) %>%
+1696466240998:arrange(desc(Median)) %>%
+1696466240999:head(10)
+1696466241007:print(top_10_salary)
+1696466241079:ggplot(recent_grads, aes(x= reorder(Major_category, -Median), y = Median))+
+1696466241080:geom_bar(stat="summary")+
+1696466241080:xlab("Major Category")
+1696466241240:coord_flip()
+1696466264477:top_10_salary <- recent_grads %>%
+1696466264478:select(Major, Median) %>%
+1696466264478:arrange(desc(Median)) %>%
+1696466264479:head(10)
+1696466264487:print(top_10_salary)
+1696466264492:ggplot(recent_grads, aes(x= reorder(Major_category, -Median), y = Median))+
+1696466264493:geom_bar(stat="summary")+
+1696466264494:xlab("Major Category")+
+1696466264494:coord_flip()
+1696466335754:glimpse(recent_grads$Median)
+1696466335756:# regrouping values into new levels
+1696466335756:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1696466335757:"30-50k", "50-70K", "70-90K","90K and above"))
+1696466335767:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1696466335788:recent_grads$Median_levels[recent_grads$Median>=30000 & recent_grads$Median<50000] <- "30-50K" #unsure why this level is missing
+1696466335798:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<70000] <- "50-70K"
+1696466335808:recent_grads$Median_levels[recent_grads$Median>= 70000 & recent_grads$Median <90000] <- "70-90K"
+1696466335817:recent_grads$Median_levels[recent_grads$Median>= 90000] <- "90K and Above"
+1696466335827:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1696466335836:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1696466335837:geom_bar(stat = "summary")+
+1696466335838:xlab("Major Category")+
+1696466335839:ylab("Median Salary")
+1696466335986:coord_flip()+
+1696466335987:facet_wrap(~Median_levels)
+1696466353227:glimpse(recent_grads$Median)
+1696466353229:# regrouping values into new levels
+1696466353230:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1696466353231:"30-50k", "50-70K", "70-90K","90K and above"))
+1696466353241:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1696466353251:recent_grads$Median_levels[recent_grads$Median>=30000 & recent_grads$Median<50000] <- "30-50K" #unsure why this level is missing
+1696466353261:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<70000] <- "50-70K"
+1696466353271:recent_grads$Median_levels[recent_grads$Median>= 70000 & recent_grads$Median <90000] <- "70-90K"
+1696466353280:recent_grads$Median_levels[recent_grads$Median>= 90000] <- "90K and Above"
+1696466353289:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1696466353311:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1696466353312:geom_bar(stat = "summary")+
+1696466353312:xlab("Major Category")+
+1696466353313:ylab("Median Salary")+
+1696466353314:coord_flip()+
+1696466353315:facet_wrap(~Median_levels)
+1696478411864:knitr::opts_chunk$set(echo = TRUE)
+1696478411869:library(tidyverse)
+1696478411942:head(recent_grads)
+1696478412015:summary(recent_grads)
+1696478412034:str(recent_grads)
+1696479784082:knitr::opts_chunk$set(echo = TRUE)
+1696479784083:library(tidyverse)
+1696479784166:ggplot(recent_grads, aes(x=Major_category))+
+1696479784167:geom_bar()+
+1696479784168:xlab("Number of Specific Majors in Each Category")+
+1696479784168:ylab("Major Categories")+
+1696479784169:coord_flip()
+1696480102462:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1696480102464:geom_bar(stat = "summary")+
+1696480102464:coord_flip()+
+1696480102465:xlab("Major Category")+
+1696480102466:ylab("Number of Graduates")
+1696481084231:top_10_salary <- recent_grads %>%
+1696481084232:select(Major, Median) %>%
+1696481084233:arrange(desc(Median)) %>%
+1696481084234:head(10)
+1696481084251:print(top_10_salary)
+1696481084257:ggplot(recent_grads, aes(x= reorder(Major_category, -Median), y = Median))+
+1696481084257:geom_bar(stat="summary")+
+1696481084258:xlab("Major Category")+
+1696481084259:ylab("Median Salary")+
+1696481084260:coord_flip()
+1697309798852:knitr::opts_chunk$set(echo = TRUE)
+1697309798858:library(tidyverse)
+1697309798940:top_10_salary <- recent_grads %>%
+1697309798941:select(Major, Median) %>%
+1697309798942:arrange(desc(Median)) %>%
+1697309798942:head(10)
+1697309816903:knitr::opts_chunk$set(echo = TRUE)
+1697309816904:library(tidyverse)
+1697309816908:recent_grads <- read.csv("recent-grads.csv")
+1697309816934:head(recent_grads)
+1697309816943:summary(recent_grads)
+1697309816990:str(recent_grads)
+1697309817020:na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+1697309817023:print(na_counts)
+1697309817029:ggplot(recent_grads, aes(x=Major_category))+
+1697309817030:geom_bar()+
+1697309817031:xlab("Number of Specific Majors in Each Category")+
+1697309817032:ylab("Major Categories")+
+1697309817033:coord_flip()
+1697309817347:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1697309817347:geom_bar(stat = "summary")+
+1697309817348:coord_flip()+
+1697309817349:xlab("Major Category")+
+1697309817350:ylab("Number of Graduates")
+1697309817741:ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+1697309817742:geom_bar(stat= "summary")+
+1697309817743:coord_flip()+
+1697309817744:xlab("Major Category")+
+1697309817745:ylab("Number of Employed Graduates")
+1697309817925:top_10_salary <- recent_grads %>%
+1697309817926:select(Major, Median) %>%
+1697309817926:arrange(desc(Median)) %>%
+1697309817927:head(10)
+1697309817934:print(top_10_salary)
+1697309817939:ggplot(recent_grads, aes(x= reorder(Major_category, -Median), y = Median))+
+1697309817940:geom_bar(stat="summary")+
+1697309817942:xlab("Major Category")+
+1697309817943:ylab("Median Salary")+
+1697309817944:coord_flip()
+1697309818122:glimpse(recent_grads$Median)
+1697309818124:# regrouping values into new levels
+1697309818124:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1697309818125:"30-50k", "50-70K", "70-90K","90K and above"))
+1697309818135:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1697309818153:recent_grads$Median_levels[recent_grads$Median>=30000 & recent_grads$Median<50000] <- "30-50K"
+1697309818163:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<70000] <- "50-70K"
+1697309818171:recent_grads$Median_levels[recent_grads$Median>= 70000 & recent_grads$Median <90000] <- "70-90K"
+1697309818180:recent_grads$Median_levels[recent_grads$Median>= 90000] <- "90K and Above"
+1697309818194:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1697309818203:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1697309818204:geom_bar(stat = "summary")+
+1697309818205:xlab("Major Category")+
+1697309818206:ylab("Median Salary")+
+1697309818207:coord_flip()+
+1697309818207:facet_wrap(~Median_levels)
+1697312314930:recent_grads <- recent_grads %>%
+1697312314931:mutate(employment_rate = Employed / Total)
+1697312344066:head(recent_grads$employment_rate)
+1697312414186:ggplot(recent_grads, aes(x=Major_category, y=employment_rate)) %>%
+1697312414187:geom_boxplot()
+1697312421240:ggplot(recent_grads, aes(x=Major_category, y=employment_rate))+
+1697312421241:geom_boxplot()
+1697312431480:ggplot(recent_grads, aes(x=Major_category, y=employment_rate))+
+1697312431481:geom_boxplot()+
+1697312431481:coord_flip()
+1697312591005:ggplot(recent_grads, aes(x=Major_category, y=employment_rate))+
+1697312591006:geom_boxplot()+
+1697312591007:coord_flip()+
+1697312591008:xlab("Major Category")+
+1697312591008:ylab("Employment Rate")
+1697316872231:ggplot(recent_grads, aes(x= Major_category))+
+1697316872232:geom_bar()+
+1697316872233:facet_wrap(~Full_time)
+1697316893500:ggplot(recent_grads, aes(x= Major_category))+
+1697316893501:geom_bar()
+1697317193409:ggplot(recent_grads, aes(x = Major_category)) +
+1697317193410:geom_bar(aes(fill = Full_time), position = "stack", stat = "identity") +
+1697317193410:geom_bar(aes(fill = Part_time), position = "stack", stat = "identity") +
+1697317193411:labs(x = "Category", y = "Count", fill = "Type of Employment") +
+1697317193412:scale_fill_manual(values = c("Full_time" = "red", "Part_time" = "blue")) +
+1697317193413:theme_minimal()
+1697317212185:ggplot(recent_grads, aes(x = Major_category, y = Employed)) +
+1697317212186:geom_bar(aes(fill = Full_time), position = "stack", stat = "identity") +
+1697317212186:geom_bar(aes(fill = Part_time), position = "stack", stat = "identity") +
+1697317212187:labs(x = "Category", y = "Count", fill = "Type of Employment") +
+1697317212188:scale_fill_manual(values = c("Full_time" = "red", "Part_time" = "blue")) +
+1697317212188:theme_minimal()
+1697317260808:ggplot(recent_grads, aes(x = Major_category, y = Employed)) +
+1697317260809:geom_histogram(aes(fill = Full_time), position = "stack", stat = "identity") +
+1697317260810:geom_histogram(aes(fill = Part_time), position = "stack", stat = "identity") +
+1697317260811:labs(x = "Category", y = "Count", fill = "Type of Employment") +
+1697317260811:scale_fill_manual(values = c("Full_time" = "red", "Part_time" = "blue")) +
+1697317260812:theme_minimal()
+1697335916985:knitr::opts_chunk$set(echo = TRUE)
+1697335917012:library(tidyverse)
+1697335917098:ggplot(recent_grads, aes(x = Major_category, y = Total)) +
+1697335917099:geom_bar(aes(fill = Full_time, position = "stack", stat = "identity") +
+1697335917100:geom_bar(aes(fill = Part_time), position = "stack", stat = "identity") +
+1697335917101:labs(x = "Category", y = "Count", fill = "Variables") +
+1697335917101:scale_fill_manual(values = c("Variable1" = "red", "Variable2" = "blue", "Variable3" = "green")) +
+1697335917102:theme_minimal()
+1697335928613:ggplot(recent_grads, aes(x = Major_category, y = Total)) +
+1697335928614:geom_bar(aes(fill = Full_time, position = "stack", stat = "identity") +
+1697335928615:geom_bar(aes(fill = Part_time), position = "stack", stat = "identity") +
+1697335928615:labs(x = "Category", y = "Count", fill = "Variables") +
+1697335928617:scale_fill_manual(values = c("Variable1" = "red", "Variable2" = "blue", "Variable3" = "green"))
+1697335972418:ggplot(recent_grads, aes(x = Major_category, y = Total)) +
+1697335972419:geom_bar(aes(fill = Full_time, position = "stack", stat = "identity") +
+1697335972420:geom_bar(aes(fill = Part_time), position = "stack", stat = "identity") +
+1697335972421:labs(x = "Category", y = "Count", fill = "Variables") +
+1697335972422:scale_fill_manual(values = c("Full_time" = "red", "Part_time" = "blue"))
+1697336009579:ggplot(recent_grads, aes(x = Major_category, y = Total)) +
+1697336009580:geom_bar(aes(fill = Full_time, position = "stack", stat = "identity") +
+1697336009581:geom_bar(aes(fill = Part_time), position = "stack", stat = "identity") +
+1697336009582:labs(x = "Category", y = "Count", fill = "Variables") +
+1697336009582:scale_fill_manual(values = c("Full_time" = "red", "Part_time" = "blue"))
+1697336136416:ggplot(recent_grads, aes(x = Major_category, y = total, fill = Full_time))+
+1697336136417:geom_bar(stat="identity")
+1697336142913:ggplot(recent_grads, aes(x = Major_category, y = Total, fill = Full_time))+
+1697336142914:geom_bar(stat="identity")
+1697336154757:ggplot(recent_grads, aes(x = Major_category, y = Total, fill = Full_time))+
+1697336154758:geom_bar(stat="identity")+
+1697336154758:coord_flip()
+1697336175224:ggplot(recent_grads, aes(x = Major_category, y = Total, fill = Employed))+
+1697336175225:geom_bar(stat="identity")+
+1697336175226:coord_flip()
+1697336402372:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1697336402373:geom_bar(aes(fill=Full_time), position = "stacked", stat = "summary",)+
+1697336402374:geom_bar(aes(fill=Part_time), position = "stacked", stat = "summary",)+
+1697336402375:scale_fill_manual(values = c("Full_time" = "red", "Part_time" = "blue"))+
+1697336402376:coord_flip()+
+1697336402377:xlab("Major Category")+
+1697336402378:ylab("Number of Graduates")
+1697336426349:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1697336426350:geom_bar(aes(fill=Full_time), position = "stacked", stat = "identity",)+
+1697336426350:geom_bar(aes(fill=Part_time), position = "stacked", stat = "identity",)+
+1697336426351:scale_fill_manual(values = c("Full_time" = "red", "Part_time" = "blue"))+
+1697336426352:coord_flip()+
+1697336426353:xlab("Major Category")+
+1697336426354:ylab("Number of Graduates")
+1697336445258:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1697336445259:geom_bar(aes(fill=Full_time), position = "stack", stat = "identity",)+
+1697336445260:geom_bar(aes(fill=Part_time), position = "stack", stat = "identity",)+
+1697336445261:scale_fill_manual(values = c("Full_time" = "red", "Part_time" = "blue"))+
+1697336445262:coord_flip()+
+1697336445263:xlab("Major Category")+
+1697336445264:ylab("Number of Graduates")
+1697336485685:ggplot(recent_grads, aes(x = reorder(Major_category, -factor(Total), y = factor(Total))))+
+1697336485686:geom_bar(aes(fill=Full_time), position = "stack", stat = "identity",)+
+1697336485687:geom_bar(aes(fill=Part_time), position = "stack", stat = "identity",)+
+1697336485687:scale_fill_manual(values = c("Full_time" = "red", "Part_time" = "blue"))+
+1697336485688:coord_flip()+
+1697336485689:xlab("Major Category")+
+1697336485690:ylab("Number of Graduates")
+1697336536040:ggplot(recent_grads, aes(x = reorder(Major_category, -Employed), y = Employed))+
+1697336536041:geom_bar(aes(fill=Full_time), position = "stack", stat = "identity",)+
+1697336536041:geom_bar(aes(fill=Part_time), position = "stack", stat = "identity",)+
+1697336536042:scale_fill_manual(values = c("Full_time" = "red", "Part_time" = "blue"))+
+1697336536043:coord_flip()+
+1697336536044:xlab("Major Category")+
+1697336536045:ylab("Number of Graduates")
+1697336664478:ggplot(recent_grads, aes(x = reorder(Major_category, -Employed), y = Employed))+
+1697336664479:geom_bar(aes(fill=Full_time), position = "stack", stat = "identity",)+
+1697336664480:geom_bar(aes(fill=Part_time), position = "stack", stat = "identity",)+
+1697336664481:coord_flip()+
+1697336664482:xlab("Major Category")+
+1697336664483:ylab("Number of Graduates")
+1697336678356:ggplot(recent_grads, aes(x = reorder(Major_category, -Employed), y = Employed))+
+1697336678357:geom_bar(aes(fill=Full_time), position = "stack", stat = "identity",)+
+1697336678358:coord_flip()+
+1697336678360:xlab("Major Category")+
+1697336678361:ylab("Number of Graduates")
+1697336730343:ggplot(recent_grads, aes(x = reorder(Major_category, -Employed), y = Employed, fill = Full_time))+
+1697336730344:geom_bar()+
+1697336730345:coord_flip()+
+1697336730346:xlab("Major Category")+
+1697336730346:ylab("Number of Graduates")
+1697336754371:ggplot(recent_grads, aes(x = reorder(Major_category, -Employed), y = Employed, fill = Full_time))+
+1697336754372:geom_bar(stat="summary")+
+1697336754373:coord_flip()+
+1697336754374:xlab("Major Category")+
+1697336754374:ylab("Number of Graduates")
+1697336795470:ggplot(recent_grads, aes(x = reorder(Major_category, -Employed), y = Employed, fill = Full_time))+
+1697336795471:geom_bar(stat="summary")+
+1697336795472:coord_flip()+
+1697336795472:xlab("Major Category")+
+1697336795473:ylab("Number of Employed Graduates")
+1697336932352:ggplot(recent_grads, aes(x = reorder(Major_category, -Employed), y = Employed))+
+1697336932354:geom_bar(aes(fill = Full_time), position = "stack", stat="identity")+
+1697336932355:coord_flip()+
+1697336932356:xlab("Major Category")+
+1697336932357:ylab("Number of Employed Graduates")
+1697337019787:summary(recent_grads)
+1697337414196:recent_grads <- recent_grads %>%
+1697337414197:mutate(Prop_full_time = Full_time/Employed,
+1697337414198:Prop_part_time = Part_time/Employed)
+1697337493035:recent_grads <- recent_grads %>%
+1697337493037:mutate(Prop_full_time = Full_time/Employed,
+1697337493038:Prop_part_time = Part_time/Employed)
+1697337493053:ggplot(recent_grads, aes(x = Major_category)) +
+1697337493054:geom_bar(aes(fill = Prop_full_time), position = "stack", stat = "identity") +
+1697337493055:geom_bar(aes(fill = Prop_part_time), position = "stack", stat = "identity") +
+1697337493056:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status") +
+1697337493058:scale_fill_manual(values = c("Prop_full_time" = "blue", "Prop_part_time" = "red")) +
+1697337493059:theme_minimal()
+1697337507118:recent_grads <- recent_grads %>%
+1697337507120:mutate(Prop_full_time = Full_time/Employed,
+1697337507120:Prop_part_time = Part_time/Employed)
+1697337507135:ggplot(recent_grads, aes(x = Major_category), y = Employed) +
+1697337507136:geom_bar(aes(fill = Prop_full_time), position = "stack", stat = "identity") +
+1697337507137:geom_bar(aes(fill = Prop_part_time), position = "stack", stat = "identity") +
+1697337507138:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status") +
+1697337507139:scale_fill_manual(values = c("Prop_full_time" = "blue", "Prop_part_time" = "red")) +
+1697337507140:theme_minimal()
+1697337585723:recent_grads <- recent_grads %>%
+1697337585724:mutate(Prop_full_time = Full_time/Employed,
+1697337585725:Prop_part_time = Part_time/Employed)
+1697337585738:ggplot(recent_grads, aes(x = Major_category)) +
+1697337585738:geom_bar(aes(fill = Prop_full_time), y = 1, position = "stack", stat = "identity") +
+1697337585739:geom_bar(aes(fill = Prop_part_time), y = 1, position = "stack", stat = "identity") +
+1697337585740:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status") +
+1697337585741:scale_fill_manual(values = c("Prop_full_time" = "blue", "Prop_part_time" = "red")) +
+1697337585742:theme_minimal()
+1697337620847:ggplot(recent_grads, aes(x = Major_category)) +
+1697337620848:geom_bar(aes(fill = "Prop_full_time"), position = "stack", stat = "identity") +
+1697337620849:geom_bar(aes(fill = "Prop_part_time"), position = "stack", stat = "identity") +
+1697337620850:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status") +
+1697337620851:scale_fill_manual(values = c("Prop_full_time" = "blue", "Prop_part_time" = "red")) +
+1697337620851:theme_minimal()
+1697337669215:recent_grads <- recent_grads %>%
+1697337669216:mutate(Prop_full_time = Full_time/Employed,
+1697337669217:Prop_part_time = Part_time/Employed)
+1697337669230:ggplot(recent_grads, aes(x = Major_category)) +
+1697337669231:geom_bar(aes(fill = Prop_full_time), position = "stack", stat = "identity") +
+1697337669232:geom_bar(aes(fill = Prop_part_time), position = "stack", stat = "identity") +
+1697337669233:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status") +
+1697337669234:scale_fill_manual(values = c("Prop_full_time" = "blue", "Prop_part_time" = "red")) +
+1697337669235:theme_minimal()
+1697337702197:ggplot(recent_grads, aes(x = Major_category)) +
+1697337702198:geom_bar(aes(fill = Prop_full_time), position = "stack", stat = "identity") +
+1697337702198:geom_bar(aes(fill = Prop_part_time), position = "stack", stat = "identity") +
+1697337702199:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status") +
+1697337702200:scale_fill_manual(values = c("Prop_full_time" = "blue", "Prop_part_time" = "red"))
+1697337715490:ggplot(recent_grads, aes(x = Major_category, y = Employed)) +
+1697337715491:geom_bar(aes(fill = Prop_full_time), position = "stack", stat = "identity") +
+1697337715492:geom_bar(aes(fill = Prop_part_time), position = "stack", stat = "identity") +
+1697337715493:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status") +
+1697337715493:scale_fill_manual(values = c("Prop_full_time" = "blue", "Prop_part_time" = "red"))
+1697337729446:recent_grads <- recent_grads %>%
+1697337729447:mutate(Prop_full_time = Full_time/Employed,
+1697337729448:Prop_part_time = Part_time/Employed)
+1697337729460:ggplot(recent_grads, aes(x = Major_category, y = factor(Employed))) +
+1697337729461:geom_bar(aes(fill = Prop_full_time), position = "stack", stat = "identity") +
+1697337729462:geom_bar(aes(fill = Prop_part_time), position = "stack", stat = "identity") +
+1697337729463:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status") +
+1697337729463:scale_fill_manual(values = c("Prop_full_time" = "blue", "Prop_part_time" = "red"))
+1697337812020:recent_grads <- recent_grads %>%
+1697337812021:mutate(Prop_full_time = Full_time/Employed,
+1697337812022:Prop_part_time = Part_time/Employed)
+1697337812034:ggplot(recent_grads, aes(x = Major_category)) +
+1697337812035:geom_bar(aes(fill = Prop_full_time), position = "stack", stat = "identity") +
+1697337812035:geom_bar(aes(fill = Prop_part_time), position = "stack", stat = "identity") +
+1697337812036:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status") +
+1697337812037:scale_fill_manual(values = c("Prop_full_time" = "blue", "Prop_part_time" = "red"))
+1697337865648:recent_grads <- recent_grads %>%
+1697337865649:mutate(Prop_full_time = Full_time/Employed,
+1697337865650:Prop_part_time = Part_time/Employed)
+1697337865662:ggplot(recent_grads, aes(x = Major_category)) +
+1697337865663:geom_bar(aes(fill = Prop_full_time), position = "stack", stat = "identity") +
+1697337865663:geom_bar(aes(fill = Prop_part_time), position = "stack", stat = "identity") +
+1697337865664:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status")
+1697337921124:recent_grads <- recent_grads %>%
+1697337921125:mutate(Prop_full_time = Full_time/Employed,
+1697337921125:Prop_part_time = Part_time/Employed)
+1697337921148:ggplot(recent_grads, aes(x = Major_category)) +
+1697337921149:geom_bar(aes(fill = Prop_full_time), y=1, position = "stack", stat = "identity") +
+1697337921149:geom_bar(aes(fill = Prop_part_time), y=1, position = "stack", stat = "identity") +
+1697337921150:labs(x = "Major", y = "Proportion of Workers", fill = "Employment Status") +
+1697337921151:scale_fill_manual(values = c("Prop_full_time" = "blue", "Prop_part_time" = "red"))
+1697338131095:ggplot(data, aes(fill=Full_time, y=Employed, x=Major_category)) +
+1697338131096:geom_bar(position="stack", stat="identity")
+1697338140856:ggplot(recent_grads, aes(fill=Full_time, y=Employed, x=Major_category)) +
+1697338140857:geom_bar(position="stack", stat="identity")
+1697338453259:ggplot(recent_grads, aes(y=Employed, x=Major_category)) +
+1697338453260:geom_bar(stat="summary")+
+1697338453261:group_by(Full_time)
+1697338464820:ggplot(recent_grads, aes(y=Employed, x=Major_category)) +
+1697338464821:geom_bar(stat="summary")+
+1697338464822:group_by(recent_grads$Full_time)
+1697338521511:ggplot(recent_grads, aes(x = Major_category, y= Employed, fill = Full_time))+
+1697338521512:geom_bar(stat="summary")
+1697338543482:ggplot(recent_grads, aes(x = Major_category, y= Employed, fill = Full_time))+
+1697338543483:geom_bar(position="fill", stat="identity")
+1697338555034:ggplot(recent_grads, aes(x = Major_category, y= Employed, fill = Full_time))+
+1697338555035:geom_bar(position="fill", stat="identity")+
+1697338555035:coord_flip()
+1697338635074:ggplot(recent_grads, aes(x = Major_category, y= Employed, fill = Prop_full_time))+
+1697338635075:geom_bar(position="fill", stat="identity")+
+1697338635076:coord_flip()
+1697338646167:ggplot(recent_grads, aes(x = Major_category, y= Employed, fill = Full_time))+
+1697338646168:geom_bar(position="fill", stat="identity")+
+1697338646169:coord_flip()
+1697338720471:Employment_status <- c("Full-Time", "Part-Time")
+1697394001572:knitr::opts_chunk$set(echo = TRUE)
+1697394001579:library(tidyverse)
+1697394001663:ggplot(recent_grads, aes(x = Major_category, y= Employed, fill = Full_time))+
+1697394001663:geom_histogram
+1697394324479:recent_grads <- recent_grads %>%
+1697394324480:mutate(Employment_status = case_when(
+1697394324481:Full_time > 0 & Part_time == 0 ~ "Full-Time",
+1697394324482:Part_Time > 0 & Full_Time == 0 ~ "Part-Time",
+1697394324482:Full_Time > 0 & Part_Time > 0 ~ "Mixed (Full-Time & Part-Time)",
+1697394324483:TRUE ~ "Not Employed"
+1697394324484:))
+1697394339686:recent_grads <- recent_grads %>%
+1697394339687:mutate(Employment_status = case_when(
+1697394339688:Full_time > 0 & Part_time == 0 ~ "Full-Time",
+1697394339691:Part_time > 0 & Full_time == 0 ~ "Part-Time",
+1697394339692:Full_time > 0 & Part_time > 0 ~ "Mixed (Full-Time & Part-Time)",
+1697394339693:TRUE ~ "Not Employed"
+1697394339694:))
+1697394373327:recent_grads <- recent_grads %>%
+1697394373328:mutate(Employment_status = case_when(
+1697394373329:Full_time > 0 & Part_time == 0 ~ "Full-Time",
+1697394373330:Part_time > 0 & Full_time == 0 ~ "Part-Time",
+1697394373331:Full_time > 0 & Part_time > 0 ~ "Mixed (Full-Time & Part-Time)",
+1697394373332:TRUE ~ "Not Employed"
+1697394373332:))
+1697394373346:ggplot(recent_grads, aes(x=Major_category, y=Employment_status))+
+1697394373347:geom_bar()
+1697394392481:recent_grads <- recent_grads %>%
+1697394392482:mutate(Employment_status = case_when(
+1697394392483:Full_time > 0 & Part_time == 0 ~ "Full-Time",
+1697394392484:Part_time > 0 & Full_time == 0 ~ "Part-Time",
+1697394392485:Full_time > 0 & Part_time > 0 ~ "Mixed (Full-Time & Part-Time)",
+1697394392486:TRUE ~ "Not Employed"
+1697394392487:))
+1697394392501:ggplot(recent_grads, aes(x=Major_category, y=Employment_status))+
+1697394392503:geom_bar(stat = "summary")
+1697394421865:recent_grads <- recent_grads %>%
+1697394421869:mutate(Employment_status = case_when(
+1697394421870:Full_time > 0 & Part_time == 0 ~ "Full-Time",
+1697394421870:Part_time > 0 & Full_time == 0 ~ "Part-Time",
+1697394421871:Full_time > 0 & Part_time > 0 ~ "Mixed (Full-Time & Part-Time)",
+1697394421872:TRUE ~ "Not Employed"
+1697394421873:))
+1697394421890:ggplot(recent_grads, aes(x=Major_category, y=Employed, fill= Employment_status))+
+1697394421891:geom_bar(stat = "summary")
+1697394440177:recent_grads <- recent_grads %>%
+1697394440178:mutate(Employment_status = case_when(
+1697394440179:Full_time > 0 & Part_time == 0 ~ "Full-Time",
+1697394440179:Part_time > 0 & Full_time == 0 ~ "Part-Time",
+1697394440180:))
+1697394440194:ggplot(recent_grads, aes(x=Major_category, y=Employed, fill= Employment_status))+
+1697394440194:geom_bar(stat = "summary")
+1697394475581:recent_grads <- recent_grads %>%
+1697394475582:mutate(Employment_status = case_when(
+1697394475583:Full_time > 0 ~ "Full-Time",
+1697394475584:Part_time > 0 ~ "Part-Time",
+1697394475585:))
+1697394475598:ggplot(recent_grads, aes(x=Major_category, y=Employed, fill= Employment_status))+
+1697394475599:geom_bar(stat = "summary")
+1697394503626:recent_grads <- recent_grads %>%
+1697394503627:mutate(Employment_status = case_when(
+1697394503628:Full_time ~ "Full-Time",
+1697394503629:Part_time ~ "Part-Time",
+1697394503630:))
+1697394670072:recent_grads <- recent_grads %>%
+1697394670073:mutate(Prop_full_time = Full_time/Employed,
+1697394670073:Prop_part_time = Part_time/Employed)
+1697394771023:geom_bar(stat='identity', position = 'dodge)
+1697394786775:recent_grads <- recent_grads %>%
+1697394786776:mutate(Prop_full_time = Full_time/Employed,
+1697394786777:Prop_part_time = Part_time/Employed)
+1697394786784:ggplot(recent_grads, aes(x= Major_category, y= Employed, fill = Prop_full_time))+
+1697394786788:geom_bar(stat='identity', position = 'dodge)
+1697394796597:recent_grads <- recent_grads %>%
+1697394796599:mutate(Prop_full_time = Full_time/Employed,
+1697394796600:Prop_part_time = Part_time/Employed)
+1697394796646:ggplot(recent_grads, aes(x= Major_category, y= Employed, fill = Prop_full_time))+
+1697394796647:geom_bar(stat='identity', position = 'dodge')
+1697394817601:recent_grads <- recent_grads %>%
+1697394817602:mutate(Prop_full_time = Full_time/Employed,
+1697394817603:Prop_part_time = Part_time/Employed)
+1697394817624:ggplot(recent_grads, aes(x= Major_category, y= Employed, fill = Prop_full_time))+
+1697394817625:geom_bar(stat='identity', position = 'dodge')+
+1697394817626:coord_flip()
+1697394851577:summary(recent_grads$Prop_full_time)
+1697394872834:recent_grads <- recent_grads %>%
+1697394872835:mutate(Prop_full_time = Full_time/Employed,
+1697394872836:Prop_part_time = Part_time/Employed)
+1697394872854:ggplot(recent_grads, aes(x= Major_category, y= Employed, fill = Prop_full_time))+
+1697394872855:geom_bar(stat='identity', position = 'dodge')+
+1697394872856:coord_flip()
+1697394893002:ggplot(recent_grads, aes(x= Major_category, y= Employed, fill = Prop_full_time))+
+1697394893002:geom_bar(stat='identity', position = 'stack')+
+1697394893003:coord_flip()
+1697394942666:ggplot(recent_grads, aes(x= Major_category, y=Prop_full_time))+
+1697394942667:geom_bar(stat='summary')+
+1697394942668:coord_flip()
+1697394966417:ggplot(recent_grads, aes(x= Major_category, y=Prop_full_time))+
+1697394966418:geom_bar(stat='summary')+
+1697394966419:coord_flip()+
+1697394966420:arrange()
+1697394978820:ggplot(recent_grads, aes(x= Major_category, y=Prop_full_time))+
+1697394978821:geom_bar(stat='summary')+
+1697394978822:coord_flip()+
+1697394978823:arrange(Prop_full_time)
+1697394989484:ggplot(recent_grads, aes(x= Major_category, y=Prop_full_time))+
+1697394989485:geom_bar(stat='summary')+
+1697394989486:coord_flip()+
+1697394989487:arrange(recent_grads$Prop_full_time)
+1697395008251:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1697395008252:geom_bar(stat='summary')+
+1697395008253:coord_flip()
+1697395025175:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1697395025176:geom_histogram()+
+1697395025177:coord_flip()
+1697395039870:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1697395039871:geom_boxplot()+
+1697395039872:coord_flip()
+1697395068287:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1697395068288:geom_bar()+
+1697395068288:coord_flip()
+1697395076980:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1697395076981:geom_bar(stat="summary")+
+1697395076981:coord_flip()
+1697395475601:recent_grads <- recent_grads %>%
+1697395475602:mutate(Prop_full_time = Full_time/Employed)
+1697395475619:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1697395475620:geom_bar(stat="summary")+
+1697395475621:coord_flip()
+1697395726631:recent_grads <- recent_grads %>%
+1697395726632:mutate(Prop_full_time = Full_time/Employed)
+1697395726649:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1697395726650:geom_bar(stat="summary")+
+1697395726651:coord_flip()+
+1697395726653:xlab("Major Cateogry")+
+1697395726654:ylab("Proportion of Full-time Employees")
+1697397691141:top_10_salary <- recent_grads %>%
+1697397691142:select(Major, Median) %>%
+1697397691143:arrange(desc(Median)) %>%
+1697397691143:head(10)
+1697397691154:print(top_10_salary)
+1697397691160:ggplot(recent_grads, aes(x= reorder(Major_category, -Median), y = Median))+
+1697397691161:geom_bar(stat="summary")+
+1697397691162:xlab("Major Category")+
+1697397691163:ylab("Median Salary")+
+1697397691163:coord_flip()
+1697397761888:top_10_salary <- recent_grads %>%
+1697397761889:select(Major, Median, Major_category) %>%
+1697397761890:arrange(desc(Median)) %>%
+1697397761891:head(10)
+1697397761899:ggplot(to)
+1697397799432:ggplot(top_10_salary, x=Major, y=Median, fill = Major_category)+
+1697397799433:geom_bar()
+1697397810656:ggplot(top_10_salary, x=Major, y=Median, fill = Major_category)+
+1697397810657:geom_bar(stat="summary")
+1697397827481:ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+1697397827482:geom_bar(stat="summary")
+1697397972379:top_10_salary <- recent_grads %>%
+1697397972380:select(Major, Median, Major_category) %>%
+1697397972381:arrange(desc(Median)) %>%
+1697397972382:head(10)
+1697397972391:ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+1697397972392:geom_bar(stat="summary")+
+1697397972393:coord_flip()+
+1697397972394:labs(x="Major", y="Median Salary", fill = "Major Category")
+1697398444948:bottom_10_salary <- recent_grads %>%
+1697398444949:select(Major, Median, Major_category) %>%
+1697398444950:arrange(Median) %>%
+1697398444951:head(10)
+1697398444960:ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+1697398444961:geom_bar(stat="summary")+
+1697398444962:coord_flip()+
+1697398444963:labs(x="Major", y="Median Salary", fill = "Major Category")
+1697398475495:bottom_10_salary <- recent_grads %>%
+1697398475496:select(Major, Median, Major_category) %>%
+1697398475497:arrange(Median) %>%
+1697398475498:head(10)
+1697398475507:ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+1697398475508:geom_bar(stat="summary")+
+1697398475509:coord_flip()+
+1697398475509:labs(x="Major", y="Median Salary", fill = "Major Category")
+1697399046220:glimpse(recent_grads$Median)
+1697399046222:# regrouping values into new levels
+1697399046223:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1697399046224:"30-50k", "50-70K", "70-90K","90K and above"))
+1697399046236:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1697399046248:recent_grads$Median_levels[recent_grads$Median>=30000 & recent_grads$Median<50000] <- "30-50K"
+1697399046260:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<70000] <- "50-70K"
+1697399046285:recent_grads$Median_levels[recent_grads$Median>= 70000 & recent_grads$Median <90000] <- "70-90K"
+1697399046296:recent_grads$Median_levels[recent_grads$Median>= 90000] <- "90K and Above"
+1697399046307:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1697399046320:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1697399046321:geom_bar(stat = "summary")+
+1697399046324:xlab("Major Category")+
+1697399046325:ylab("Median Salary")+
+1697399046326:coord_flip()+
+1697399046327:facet_wrap(~Median_levels)
+1697399107083:ggplot(recent_grads, aes(x=Major_category, y=Median))+
+1697399107084:geom_bar(stat = "summary")+
+1697399107084:xlab("Major Category")+
+1697399107085:ylab("Median Salary")+
+1697399107086:coord_flip()
+1697399132429:ggplot(recent_grads, aes(x=Major_category, y=Median))+
+1697399132430:geom_boxplot()+
+1697399132431:xlab("Major Category")+
+1697399132432:ylab("Median Salary")+
+1697399132433:coord_flip()
+1697399290591:glimpse(recent_grads$Median)
+1697399290594:# regrouping values into new levels
+1697399290594:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1697399290595:"30-50k", "50-70K", "70-90K","90K and above"))
+1697399290607:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1697399290619:recent_grads$Median_levels[recent_grads$Median>=30000 & recent_grads$Median<50000] <- "30-50K"
+1697399290630:recent_grads$Median_levels[recent_grads$Median>=50000 & recent_grads$Median<70000] <- "50-70K"
+1697399290641:recent_grads$Median_levels[recent_grads$Median>= 70000 & recent_grads$Median <90000] <- "70-90K"
+1697399290652:recent_grads$Median_levels[recent_grads$Median>= 90000] <- "90K and Above"
+1697399290662:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1697399290673:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1697399290674:geom_bar(stat = "summary")+
+1697399290675:xlab("Major Category")+
+1697399290676:ylab("Median Salary")+
+1697399290677:coord_flip()+
+1697399290677:facet_wrap(~Median_levels)
+1697399382571:limpse(recent_grads$Median)
+1697399387376:glimpse(recent_grads$Median)
+1697399387386:# regrouping values into new levels
+1697399387387:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1697399387388:"30-70K", "70K and above"))
+1697399387401:recent_grads$Median_levels[recent_grads$Median<30000] <- "Under 30K"
+1697399387413:recent_grads$Median_levels[recent_grads$Median>=30000 & recent_grads$Median<70000] <- "30-70K"
+1697399387426:recent_grads$Median_levels[recent_grads$Median>= 70000] <- "70K and Above"
+1697399387437:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1697399387449:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1697399387449:geom_bar(stat = "summary")+
+1697399387450:xlab("Major Category")+
+1697399387451:ylab("Median Salary")+
+1697399387452:coord_flip()+
+1697399387454:facet_wrap(~Median_levels)
+1697399603426:ggplot(recent_grads, aes(x=Major_category, y=Median))+
+1697399603427:geom_boxplot()+
+1697399603428:xlab("Major Category")+
+1697399603429:ylab("Median Salary")+
+1697399603430:coord_flip()
+1697399603898:glimpse(recent_grads$Median)
+1697399603901:# regrouping values into new levels
+1697399603903:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1697399603904:"30-70K", "70K and above"))
+1697399603916:recent_grads$Median_levels[recent_grads$Median<=30000] <- "Under 30K"
+1697399603928:recent_grads$Median_levels[recent_grads$Median>30000 & recent_grads$Median<=70000] <- "30-70K"
+1697399603940:recent_grads$Median_levels[recent_grads$Median> 70000] <- "70K and Above"
+1697399603952:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1697399603965:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1697399603966:geom_bar(stat = "summary")+
+1697399603967:xlab("Major Category")+
+1697399603968:ylab("Median Salary")+
+1697399603969:coord_flip()+
+1697399603969:facet_wrap(~Median_levels)
+1697399667159:ggplot(recent_grads, aes(x=Major_category, y=Median))+
+1697399667160:geom_boxplot()+
+1697399667161:xlab("Major Category")+
+1697399667162:ylab("Median Salary")+
+1697399667163:coord_flip()
+1697399667367:glimpse(recent_grads$Median)
+1697399667369:# regrouping values into new levels
+1697399667371:recent_grads$Median_levels <- factor(recent_grads$Median,levels=c("Under 30K",
+1697399667372:"30-70K", "70K and above"))
+1697399667385:recent_grads$Median_levels[recent_grads$Median<=30000] <- "Under 30K"
+1697399667399:recent_grads$Median_levels[recent_grads$Median>30000 & recent_grads$Median<=70000] <- "30-70K"
+1697399667422:recent_grads$Median_levels[recent_grads$Median> 70000] <- "70K and Above"
+1697399667434:recent_grad_salary_ranges <- recent_grads[!is.na(recent_grads$Median_levels),]
+1697399667446:ggplot(recent_grad_salary_ranges, aes(x=Major_category, y=Median))+
+1697399667447:geom_bar(stat = "summary")+
+1697399667448:xlab("Major Category")+
+1697399667449:ylab("Median Salary")+
+1697399667449:coord_flip()+
+1697399667450:facet_wrap(~Median_levels)
+1697400504735:ggplot(recent_grads, aes(x=Major_category, y=Median))+
+1697400504736:geom_boxplot()+
+1697400504738:xlab("Major Category")+
+1697400504739:ylab("Median Salary")+
+1697400504740:coord_flip()
+1697403158959:ggplot(recent_grads, aes(x = Major_category, y = Median, size = cor_matrix[1, 2], color = cor_matrix[1, 2])) +
+1697403158960:geom_point() +
+1697403158961:scale_size_continuous(name = "Correlation", limits = c(-1, 1)) +
+1697403158961:scale_color_gradient(low = "blue", high = "red")
+1697403186505:library(corrplot)
+1697403201881:library(corrplot)
+1697403228796:library(GGally)
+1701140048899:---
+1701140048904:title: "EDA Code Notebook - Amy Chen and Marc Margolis"
+1701140054183:---
+1701140054184:title: "EDA Code Notebook - Amy Chen and Marc Margolis"
+1701140070601:knitr::opts_chunk$set(echo = TRUE)
+1701140070602:library(tidyverse)
+1701140070690:recent_grads <- read.csv("recent-grads.csv")
+1701140070713:head(recent_grads)
+1701140070722:summary(recent_grads)
+1701140070741:str(recent_grads)
+1701140070773:na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+1701140070777:print(na_counts)
+1701140070783:ggplot(recent_grads, aes(x=Major_category))+
+1701140070784:geom_bar()+
+1701140070785:xlab("Number of Specific Majors in Each Category")+
+1701140070786:ylab("Major Categories")+
+1701140070786:coord_flip()
+1701140071088:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1701140071089:geom_bar(stat = "summary")+
+1701140071090:coord_flip()+
+1701140071091:xlab("Major Category")+
+1701140071092:ylab("Number of Graduates")
+1701140071365:ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+1701140071366:geom_bar(stat= "summary")+
+1701140071367:coord_flip()+
+1701140071368:xlab("Major Category")+
+1701140071369:ylab("Number of Employed Graduates")
+1701140071546:recent_grads <- recent_grads %>%
+1701140071547:mutate(Employment_rate = Employed / Total)
+1701140071564:ggplot(recent_grads, aes(x=Major_category, y=Employment_rate))+
+1701140071565:geom_boxplot()+
+1701140071566:coord_flip()+
+1701140071567:xlab("Major Category")+
+1701140071568:ylab("Employment Rate")
+1701140071902:recent_grads <- recent_grads %>%
+1701140071903:mutate(Prop_full_time = Full_time/Employed)
+1701140071914:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1701140071915:geom_bar(stat="summary")+
+1701140071916:coord_flip()+
+1701140071916:xlab("Major Cateogry")+
+1701140071917:ylab("Proportion of Full-time Employees")
+1701140072118:top_10_salary <- recent_grads %>%
+1701140072119:select(Major, Median, Major_category) %>%
+1701140072119:arrange(desc(Median)) %>%
+1701140072120:head(10)
+1701140072135:ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+1701140072136:geom_bar(stat="summary")+
+1701140072137:coord_flip()+
+1701140072138:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701140072408:bottom_10_salary <- recent_grads %>%
+1701140072409:select(Major, Median, Major_category) %>%
+1701140072410:arrange(Median) %>%
+1701140072411:head(10)
+1701140072420:ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+1701140072420:geom_bar(stat="summary")+
+1701140072421:coord_flip()+
+1701140072422:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701140072721:ggplot(recent_grads, aes(x=Major_category, y=Median))+
+1701140072722:geom_boxplot()+
+1701140072723:xlab("Major Category")+
+1701140072724:ylab("Median Salary")+
+1701140072724:coord_flip()
+1701195380063:knitr::opts_chunk$set(echo = TRUE)
+1701195380071:library(tidyverse)
+1701195380268:recent_grads <- read.csv("recent-grads.csv")
+1701195380295:head(recent_grads)
+1701195380402:summary(recent_grads)
+1701195380470:str(recent_grads)
+1701195380555:na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+1701195380558:print(na_counts)
+1701195380565:ggplot(recent_grads, aes(x=Major_category))+
+1701195380566:geom_bar()+
+1701195380567:xlab("Number of Specific Majors in Each Category")+
+1701195380567:ylab("Major Categories")+
+1701195380568:coord_flip()
+1701195380987:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1701195380988:geom_bar(stat = "summary")+
+1701195381045:coord_flip()+
+1701195381046:xlab("Major Category")+
+1701195381047:ylab("Number of Graduates")
+1701195381500:ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+1701195381500:geom_bar(stat= "summary")+
+1701195381501:coord_flip()+
+1701195381502:xlab("Major Category")+
+1701195381503:ylab("Number of Employed Graduates")
+1701195381792:recent_grads <- recent_grads %>%
+1701195381793:mutate(Employment_rate = Employed / Total)
+1701195381810:ggplot(recent_grads, aes(x=Major_category, y=Employment_rate))+
+1701195381811:geom_boxplot()+
+1701195381812:coord_flip()+
+1701195381813:xlab("Major Category")+
+1701195381814:ylab("Employment Rate")
+1701195382381:recent_grads <- recent_grads %>%
+1701195382382:mutate(Prop_full_time = Full_time/Employed)
+1701195382394:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1701195382394:geom_bar(stat="summary")+
+1701195382395:coord_flip()+
+1701195382396:xlab("Major Cateogry")+
+1701195382397:ylab("Proportion of Full-time Employees")
+1701195382752:top_10_salary <- recent_grads %>%
+1701195382753:select(Major, Median, Major_category) %>%
+1701195382754:arrange(desc(Median)) %>%
+1701195382755:head(10)
+1701195382768:ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+1701195382769:geom_bar(stat="summary")+
+1701195382770:coord_flip()+
+1701195382771:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701195383260:bottom_10_salary <- recent_grads %>%
+1701195383261:select(Major, Median, Major_category) %>%
+1701195383262:arrange(Median) %>%
+1701195383263:head(10)
+1701195383271:ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+1701195383272:geom_bar(stat="summary")+
+1701195383273:coord_flip()+
+1701195383274:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701195383577:ggplot(recent_grads, aes(x=Major_category, y=Median))+
+1701195383578:geom_boxplot()+
+1701195383579:xlab("Major Category")+
+1701195383579:ylab("Median Salary")+
+1701195383580:coord_flip()
+1701195550135:ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+1701195550136:geom_bar(stat="summary")+
+1701195550137:coord_flip()
+1701195641446:ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+1701195641447:geom_bar(stat="identity")+
+1701195641448:coord_flip()
+1701195664114:ggplot(recent_grads, aes(x=Major_category, y= Median, alpha=ShareWomen))+
+1701195664116:geom_bar(stat="identity")+
+1701195664117:coord_flip()
+1701195689885:ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+1701195689886:geom_bar(stat="identity")+
+1701195689887:coord_flip()
+1701195775713:ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+1701195775714:geom_bar(stat="identity")+
+1701195775715:coord_flip()+
+1701195775716:labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+1701195837945:1)  Popular majors may only sometimes lead to financial success or better employment opportunities. For example, while social sciences and communications ranked in the top three most popular majors, they fell behind in full-time employment opportunities and median salary. In contrast, engineering consistently ranks as a leading major in terms of full-time employment opportunities and median salary despite being one of the most unpopular majors among new graduates.
+1701195851595:ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+1701195851596:geom_bar(stat="identity")+
+1701195851597:coord_flip()+
+1701195851598:labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+1701196432202:ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category, alpha=ShareWomen))+
+1701196432203:geom_bar(stat="identity")+
+1701196432204:coord_flip()+
+1701196432205:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701196475149:ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701196475150:geom_bar(stat="identity")+
+1701196475151:coord_flip()+
+1701196475152:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701196493589:top_10_salary <- recent_grads %>%
+1701196493590:select(Major, Median, Major_category, ShareWomen) %>%
+1701196493591:arrange(desc(Median)) %>%
+1701196493592:head(10)
+1701196498233:ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701196498234:geom_bar(stat="identity")+
+1701196498235:coord_flip()+
+1701196498236:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701196510139:ggplot(top_10_salary, aes(x=Major, y=Median, alpha = ShareWomen))+
+1701196510140:geom_bar(stat="identity")+
+1701196510141:coord_flip()+
+1701196510142:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701196535550:ggplot(top_10_salary, aes(x=Major, y=Median, alpha = ShareWomen, color = Major_category))+
+1701196535551:geom_bar(stat="identity")+
+1701196535551:coord_flip()+
+1701196535552:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701196550234:ggplot(top_10_salary, aes(x=Major, y=Median, alpha = ShareWomen, fill = Major_category))+
+1701196550235:geom_bar(stat="identity")+
+1701196550237:coord_flip()+
+1701196550238:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701196569455:ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701196569457:geom_bar(stat="identity")+
+1701196569458:coord_flip()+
+1701196569459:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701196580327:ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701196580328:geom_bar(stat="identity")+
+1701196580329:coord_flip()+
+1701196580330:labs(x="Major", y="Median Salary", fill = "Proportion of Women")
+1701196643974:bottom_10_salary <- recent_grads %>%
+1701196643975:select(Major, Median, Major_category, ShareWomen) %>%
+1701196643976:arrange(Median) %>%
+1701196643977:head(10)
+1701196669704:ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701196669705:geom_bar(stat="identity")+
+1701196669706:coord_flip()+
+1701196669707:labs(x="Major", y="Median Salary", fill = "Proportion of Women")
+1701196765503:ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701196765504:geom_bar(stat="identity")+
+1701196765505:coord_flip()+
+1701196765506:labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+1701196765507:theme_minimal()
+1701196885917:bottom10_gender + scale_color_brewer(Paired)
+1701196889936:bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701196889937:geom_bar(stat="identity")+
+1701196889938:coord_flip()+
+1701196889939:labs(x="Major", y="Median Salary", fill = "Proportion of Women")
+1701196892165:bottom10_gender + scale_color_brewer(Paired)
+1701196899892:bottom10_gender + scale_color_brewer("paired")
+1701196931788:bottom10_gender + scale_color_hue()
+1701401969937:knitr::opts_chunk$set(echo = TRUE)
+1701401969952:library(tidyverse)
+1701401970044:recent_grads <- read.csv("recent-grads.csv")
+1701401970084:head(recent_grads)
+1701401970171:summary(recent_grads)
+1701401970201:str(recent_grads)
+1701401970240:na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+1701401970252:print(na_counts)
+1701401970267:ggplot(recent_grads, aes(x=Major_category))+
+1701401970276:geom_bar()+
+1701401970294:xlab("Number of Specific Majors in Each Category")+
+1701401970303:ylab("Major Categories")+
+1701401970312:coord_flip()
+1701401970632:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1701401970641:geom_bar(stat = "summary")+
+1701401970650:coord_flip()+
+1701401970669:xlab("Major Category")+
+1701401970679:ylab("Number of Graduates")
+1701401970983:ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+1701401970993:geom_bar(stat= "summary")+
+1701401971002:coord_flip()+
+1701401971012:xlab("Major Category")+
+1701401971048:ylab("Number of Employed Graduates")
+1701401971256:recent_grads <- recent_grads %>%
+1701401971272:mutate(Employment_rate = Employed / Total)
+1701401971300:ggplot(recent_grads, aes(x=Major_category, y=Employment_rate))+
+1701401971309:geom_boxplot()+
+1701401971320:coord_flip()+
+1701401971331:xlab("Major Category")+
+1701401971341:ylab("Employment Rate")
+1701401971710:recent_grads <- recent_grads %>%
+1701401971719:mutate(Prop_full_time = Full_time/Employed)
+1701401971740:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1701401971761:geom_bar(stat="summary")+
+1701401971771:coord_flip()+
+1701401971780:xlab("Major Cateogry")+
+1701401971794:ylab("Proportion of Full-time Employees")
+1701401972037:top_10_salary <- recent_grads %>%
+1701401972047:select(Major, Median, Major_category, ShareWomen) %>%
+1701401972056:arrange(desc(Median)) %>%
+1701401972065:head(10)
+1701401972091:ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+1701401972111:geom_bar(stat="summary")+
+1701401972121:coord_flip()+
+1701401972131:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701401972584:bottom_10_salary <- recent_grads %>%
+1701401972593:select(Major, Median, Major_category, ShareWomen) %>%
+1701401972602:arrange(Median) %>%
+1701401972611:head(10)
+1701401972628:ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+1701401972638:geom_bar(stat="summary")+
+1701401972647:coord_flip()+
+1701401972657:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701401973002:ggplot(recent_grads, aes(x=Major_category, y=Median))+
+1701401973012:geom_boxplot()+
+1701401973030:xlab("Major Category")+
+1701401973040:ylab("Median Salary")+
+1701401973049:coord_flip()
+1701401973315:ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+1701401973324:geom_bar(stat="identity")+
+1701401973333:coord_flip()+
+1701401973342:labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+1701401973550:top10_gender <- ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701401973560:geom_bar(stat="identity")+
+1701401973569:coord_flip()+
+1701401973578:labs(x="Major", y="Median Salary", fill = "Proportion of Women")
+1701401973610:top10_gender + lims(fill=c(0,1))
+1701401973798:bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701401973815:geom_bar(stat="identity")+
+1701401973824:coord_flip()+
+1701401973833:labs(x="Major", y="Median Salary", fill = "Proportion of Women")
+1701402000243:bottom10_gender + lims(fill=c(0,1))
+1701402153507:library(viridis)
+1701402157004:install.packages("viridis")
+1701402160868:library(viridis)
+1701402194841:ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+1701402194852:geom_bar(stat="identity")+
+1701402194861:coord_flip()+
+1701402194871:labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")+
+1701402194880:scale_fill_viridis()
+1701402221850:top10_gender + lims(fill=c(0,1)) + scale_fill_viridis()
+1701402238165:bottom10_gender + lims(fill=c(0,1)) + scale_fill_viridis()
+1701402243964:bottom10_gender + lims(fill=c(0,1))
+1701402259047:top10_gender <- ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701402259057:geom_bar(stat="identity")+
+1701402259077:coord_flip()+
+1701402259092:labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+1701402259101:scale_fill_viridis()
+1701402259126:top10_gender + lims(fill=c(0,1)) + scale_fill_viridis()
+1701402271318:bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701402271339:geom_bar(stat="identity")+
+1701402271350:coord_flip()+
+1701402271363:labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+1701402271380:scale_fill_viridis()
+1701402271397:bottom10_gender + lims(fill=c(0,1))
+1701402372068:bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701402372078:geom_bar(stat="identity")+
+1701402372088:coord_flip()+
+1701402372097:labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+1701402372106:scale_fill_viridis(fill=c(0,1))
+1701402403368:bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701402403378:geom_bar(stat="identity")+
+1701402403388:coord_flip()+
+1701402403397:labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+1701402403407:lims(fill=c(0,1))
+1701402406109:bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701402406110:geom_bar(stat="identity")+
+1701402406111:coord_flip()+
+1701402406112:labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+1701402406113:lims(fill=c(0,1))
+1701402416736:print(bottom10_gender)
+1701402451832:top10_gender <- ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+1701402451841:geom_bar(stat="identity")+
+1701402451851:coord_flip()+
+1701402451860:labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+1701402451869:lims(fill=c(0,1))
+1701402451893:print(top10_gender)
+1701402467059:ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+1701402467069:geom_bar(stat="identity")+
+1701402467078:coord_flip()+
+1701402467088:labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+1701404276847:knitr::opts_chunk$set(echo = TRUE)
+1701404276862:library(tidyverse)
+1701404276872:install.packages("viridis")
+1701404276882:library(viridis)
+1701404276961:summary(recent_grads)
+1701404285027:install.packages("viridis")
+1701404297058:knitr::opts_chunk$set(echo = TRUE)
+1701404297068:library(tidyverse)
+1701404297603:summary(recent_grads)
+1701464831585:knitr::opts_chunk$set(echo = TRUE)
+1701464831605:library(tidyverse)
+1701464831700:ggplot(recent_grads, aes(x = reorder(-Major_category))+
+1701464831709:geom_bar()+
+1701464831718:xlab("Number of Specific Majors in Each Category")+
+1701464831728:ylab("Major Categories")+
+1701464831737:coord_flip()
+1701464831746:```
+1701464845210:ggplot(recent_grads, aes(x=Major_category))+
+1701464845220:geom_bar()+
+1701464845229:xlab("Number of Specific Majors in Each Category")+
+1701464845239:ylab("Major Categories")+
+1701464845248:coord_flip()
+1701465270535:ggplot(recent_grads, aes(x=Major_category))+
+1701465270544:geom_bar()+
+1701465270562:xlab("Major Categories")+
+1701465270577:ylab("Number of Specific Majors in Each Category")+
+1701465270596:coord_flip()
+1701465467977:ggplot(recent_grads, aes(x=Major_category))+
+1701465467987:geom_bar()+
+1701465467997:xlab("Major Categories")+
+1701465468006:ylab("Number of Specific Majors in Each Category")+
+1701465468016:coord_flip()+
+1701465468035:arrange(desc)
+1701465480855:knitr::opts_chunk$set(echo = TRUE)
+1701465480866:library(tidyverse)
+1701465480888:recent_grads <- read.csv("recent-grads.csv")
+1701465480924:summary(recent_grads)
+1701465480955:na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+1701465480967:print(na_counts)
+1701465480983:ggplot(recent_grads, aes(x=Major_category))+
+1701465480993:geom_bar()+
+1701465481003:xlab("Major Categories")+
+1701465481012:ylab("Number of Specific Majors in Each Category")+
+1701465481022:coord_flip()+
+1701465481031:arrange(desc)
+1701465490093:knitr::opts_chunk$set(echo = TRUE)
+1701465490103:library(tidyverse)
+1701465490116:recent_grads <- read.csv("recent-grads.csv")
+1701465490138:summary(recent_grads)
+1701465490169:na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+1701465490181:print(na_counts)
+1701465490208:ggplot(recent_grads, aes(x=Major_category))+
+1701465490218:geom_bar()+
+1701465490228:xlab("Major Categories")+
+1701465490237:ylab("Number of Specific Majors in Each Category")+
+1701465490246:coord_flip()+
+1701465490257:arrange(desc)
+1701465504354:ggplot(recent_grads, aes(x=Major_category))+
+1701465504363:geom_bar()+
+1701465504373:xlab("Major Categories")+
+1701465504382:ylab("Number of Specific Majors in Each Category")+
+1701465504392:coord_flip()+
+1701465504401:order(desc)
+1701465561506:ggplot(recent_grads, aes(x=Major_category))+
+1701465561519:geom_bar()+
+1701465561532:xlab("Major Categories")+
+1701465561543:ylab("Number of Specific Majors in Each Category")+
+1701465561553:coord_flip()+
+1701465561563:arrange(desc(Major_category))
+1701465569031:knitr::opts_chunk$set(echo = TRUE)
+1701465569040:library(tidyverse)
+1701465571685:recent_grads <- read.csv("recent-grads.csv")
+1701465574591:summary(recent_grads)
+1701465578644:ggplot(recent_grads, aes(x=Major_category))+
+1701465578654:geom_bar()+
+1701465578664:xlab("Major Categories")+
+1701465578674:ylab("Number of Specific Majors in Each Category")+
+1701465578686:coord_flip()+
+1701465578699:arrange(desc(Major_category))
+1701465657538:library(dplyr)
+1701465667228:ggplot(recent_grads, aes(x=Major_category))+
+1701465667238:geom_bar()+
+1701465667259:xlab("Major Categories")+
+1701465667274:ylab("Number of Specific Majors in Each Category")+
+1701465667285:coord_flip()+
+1701465667298:arrange(desc(Major_category))
+1701465714055:majors <- ggplot(recent_grads, aes(x=Major_category))+
+1701465714065:geom_bar()+
+1701465714074:xlab("Major Categories")+
+1701465714083:ylab("Number of Specific Majors in Each Category")+
+1701465714093:coord_flip()
+1701465732609:majors %>%
+1701465732619:arrange(desc(Major_category))
+1701465806903:recent_grads$Major_category <- factor(recent_grads$Major_category, levels = unique(recent_grads$Major_category))
+1701465806939:ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]), fill = Major_category)) +
+1701465806948:geom_bar() +
+1701465806958:xlab("Major Categories") +
+1701465806967:ylab("Number of Specific Majors in Each Category") +
+1701465806976:coord_flip()
+1701465874780:ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category])) +
+1701465874793:geom_bar() +
+1701465874803:xlab("Major Categories") +
+1701465874813:ylab("Number of Specific Majors in Each Category") +
+1701465874823:coord_flip()
+1701465895259:ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]))) +
+1701465916466:ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category])) +
+1701465916475:geom_bar() +
+1701465916496:xlab("Major Categories") +
+1701465916509:ylab("Number of Specific Majors in Each Category") +
+1701465916519:coord_flip()
+1701465946401:ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]), fill = Major_category)) +
+1701465965252:recent_grads$Major_category <- factor(recent_grads$Major_category, levels = unique(recent_grads$Major_category))
+1701465965270:ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]), fill = Major_category)) +
+1701465965280:geom_bar() +
+1701465965290:xlab("Major Categories") +
+1701465965299:ylab("Number of Specific Majors in Each Category") +
+1701465965309:coord_flip()
+1701465976008:recent_grads$Major_category <- factor(recent_grads$Major_category, levels = unique(recent_grads$Major_category))
+1701465976028:ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]))) +
+1701465976037:geom_bar() +
+1701465976046:xlab("Major Categories") +
+1701465976056:ylab("Number of Specific Majors in Each Category") +
+1701465976065:coord_flip()
+1701545354518:knitr::opts_chunk$set(echo = TRUE)
+1701545354533:library(tidyverse)
+1701545354542:library(dplyr)
+1701545354632:recent_grads <- read.csv("recent-grads.csv")
+1701545354729:summary(recent_grads)
+1701545354760:na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+1701545354772:print(na_counts)
+1701545354786:recent_grads$Major_category <- factor(recent_grads$Major_category, levels = unique(recent_grads$Major_category))
+1701545354804:ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]))) +
+1701545354813:geom_bar() +
+1701545354822:xlab("Major Categories") +
+1701545354835:ylab("Number of Specific Majors in Each Category") +
+1701545354850:coord_flip()
+1701545355210:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+1701545355219:geom_bar(stat = "summary")+
+1701545355228:coord_flip()+
+1701545355251:xlab("Major Category")+
+1701545355261:ylab("Number of Graduates")
+1701545355543:ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+1701545355552:geom_bar(stat= "summary")+
+1701545355572:coord_flip()+
+1701545355582:xlab("Major Category")+
+1701545355598:ylab("Number of Employed Graduates")
+1701545355788:recent_grads <- recent_grads %>%
+1701545355802:mutate(Employment_rate = Employed / Total)
+1701545355826:ggplot(recent_grads, aes(x=Major_category, y=Employment_rate))+
+1701545355835:geom_boxplot()+
+1701545355844:coord_flip()+
+1701545355853:xlab("Major Category")+
+1701545355862:ylab("Employment Rate")
+1701545356210:recent_grads <- recent_grads %>%
+1701545356220:mutate(Prop_full_time = Full_time/Employed)
+1701545356240:ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+1701545356249:geom_bar(stat="summary")+
+1701545356259:coord_flip()+
+1701545356268:xlab("Major Cateogry")+
+1701545356277:ylab("Proportion of Full-time Employees")
+1701545356502:top_10_salary <- recent_grads %>%
+1701545356516:select(Major, Median, Major_category, ShareWomen) %>%
+1701545356525:arrange(desc(Median)) %>%
+1701545356535:head(10)
+1701545356556:ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+1701545356565:geom_bar(stat="summary")+
+1701545356574:coord_flip()+
+1701545356584:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701545356875:bottom_10_salary <- recent_grads %>%
+1701545356885:select(Major, Median, Major_category, ShareWomen) %>%
+1701545356894:arrange(Median) %>%
+1701545356904:head(10)
+1701545356923:ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+1701545356934:geom_bar(stat="summary")+
+1701545356944:coord_flip()+
+1701545356964:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701545357313:ggplot(recent_grads, aes(x=Major_category, y=Median))+
+1701545357325:geom_boxplot()+
+1701545357335:xlab("Major Category")+
+1701545357344:ylab("Median Salary")+
+1701545357354:coord_flip()
+1701545357641:ggplot(recent_grads, aes((x=reorder(Major, -Median), y= Median, fill=ShareWomen))+
+1701545374687:ggplot(recent_grads, aes((x=reorder(Major, -Median), y= Median, fill=ShareWomen))+
+1701545443295:top_10_salary <- recent_grads %>%
+1701545443304:select(Major, Median, Major_category, ShareWomen) %>%
+1701545443313:arrange(desc(Median)) %>%
+1701545443322:head(10)
+1701545443339:ggplot(top_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+1701545443352:geom_bar(stat="summary")+
+1701545443362:coord_flip()+
+1701545443371:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701545454925:ggplot(top_10_salary, aes(x=reorder(Major, Median), y=Median, fill = Major_category))+
+1701545454934:geom_bar(stat="summary")+
+1701545454943:coord_flip()+
+1701545454952:labs(x="Major", y="Median Salary", fill = "Major Category")
+1701545567076:top10_gender <- ggplot(top_10_salary, aes(x=reorder(Major, Median), y=Median, fill = ShareWomen))+
+1701545567085:geom_bar(stat="identity")+
+1701545567095:coord_flip()+
+1701545567105:labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+1701545567120:lims(fill=c(0,1))
+1701545567145:print(top10_gender)
+1701545587214:bottom10_gender <- ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = ShareWomen))+
+1701545587223:geom_bar(stat="identity")+
+1701545587233:coord_flip()+
+1701545587242:labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+1701545587264:lims(fill=c(0,1))
+1701545587280:print(bottom10_gender)
+1701545621307:ggplot(recent_grads, aes((x=Major, y= Median, fill=ShareWomen))+
+1701545632558:ggplot(recent_grads, aes(x=Major, y= Median, fill=ShareWomen))+
+1701545632567:geom_bar(stat="identity")+
+1701545632576:coord_flip()+
+1701545632585:labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+1701545641120:ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+1701545641133:geom_bar(stat="identity")+
+1701545641144:coord_flip()+
+1701545641153:labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+1701545709417:ggplot(recent_grads, aes(x=Major_category, fill=ShareWomen))+
+1701545709426:geom_bar(stat="identity")+
+1701545709435:coord_flip()+
+1701545709444:labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+1701545747687:ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total, fill= ShareWomen))+
+1701545747696:geom_bar(stat = "summary")+
+1701545747705:coord_flip()+
+1701545747725:xlab("Major Category")+
+1701545747735:ylab("Number of Graduates")
+1701545766146:ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+1701545766156:geom_bar(stat="identity")+
+1701545766176:coord_flip()+
+1701545766186:labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")

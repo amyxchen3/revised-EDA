@@ -1,0 +1,10 @@
+{
+    "jobs_tab_visibility": "shown",
+    "default_r_version": {
+        "version": "",
+        "r_home": "",
+        "label": "",
+        "module": ""
+    },
+    "posix_terminal_shell": "bash"
+}

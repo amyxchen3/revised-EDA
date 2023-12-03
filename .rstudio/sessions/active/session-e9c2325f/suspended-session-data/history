@@ -1,0 +1,512 @@
+ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+geom_bar(stat="summary")+
+coord_flip()+
+xlab("Major Cateogry")+
+ylab("Proportion of Full-time Employees")
+top_10_salary <- recent_grads %>%
+select(Major, Median, Major_category) %>%
+arrange(desc(Median)) %>%
+head(10)
+ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+geom_bar(stat="summary")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+bottom_10_salary <- recent_grads %>%
+select(Major, Median, Major_category) %>%
+arrange(Median) %>%
+head(10)
+ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+geom_bar(stat="summary")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(recent_grads, aes(x=Major_category, y=Median))+
+geom_boxplot()+
+xlab("Major Category")+
+ylab("Median Salary")+
+coord_flip()
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+recent_grads <- read.csv("recent-grads.csv")
+head(recent_grads)
+summary(recent_grads)
+str(recent_grads)
+na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+print(na_counts)
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Number of Specific Majors in Each Category")+
+ylab("Major Categories")+
+coord_flip()
+ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+geom_bar(stat = "summary")+
+coord_flip()+
+xlab("Major Category")+
+ylab("Number of Graduates")
+ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+geom_bar(stat= "summary")+
+coord_flip()+
+xlab("Major Category")+
+ylab("Number of Employed Graduates")
+recent_grads <- recent_grads %>%
+mutate(Employment_rate = Employed / Total)
+ggplot(recent_grads, aes(x=Major_category, y=Employment_rate))+
+geom_boxplot()+
+coord_flip()+
+xlab("Major Category")+
+ylab("Employment Rate")
+recent_grads <- recent_grads %>%
+mutate(Prop_full_time = Full_time/Employed)
+ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+geom_bar(stat="summary")+
+coord_flip()+
+xlab("Major Cateogry")+
+ylab("Proportion of Full-time Employees")
+top_10_salary <- recent_grads %>%
+select(Major, Median, Major_category) %>%
+arrange(desc(Median)) %>%
+head(10)
+ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+geom_bar(stat="summary")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+bottom_10_salary <- recent_grads %>%
+select(Major, Median, Major_category) %>%
+arrange(Median) %>%
+head(10)
+ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+geom_bar(stat="summary")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(recent_grads, aes(x=Major_category, y=Median))+
+geom_boxplot()+
+xlab("Major Category")+
+ylab("Median Salary")+
+coord_flip()
+ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+geom_bar(stat="summary")+
+coord_flip()
+ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()
+ggplot(recent_grads, aes(x=Major_category, y= Median, alpha=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()
+ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()
+ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+1)  Popular majors may only sometimes lead to financial success or better employment opportunities. For example, while social sciences and communications ranked in the top three most popular majors, they fell behind in full-time employment opportunities and median salary. In contrast, engineering consistently ranks as a leading major in terms of full-time employment opportunities and median salary despite being one of the most unpopular majors among new graduates.
+ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category, alpha=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+top_10_salary <- recent_grads %>%
+select(Major, Median, Major_category, ShareWomen) %>%
+arrange(desc(Median)) %>%
+head(10)
+ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(top_10_salary, aes(x=Major, y=Median, alpha = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(top_10_salary, aes(x=Major, y=Median, alpha = ShareWomen, color = Major_category))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(top_10_salary, aes(x=Major, y=Median, alpha = ShareWomen, fill = Major_category))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")
+bottom_10_salary <- recent_grads %>%
+select(Major, Median, Major_category, ShareWomen) %>%
+arrange(Median) %>%
+head(10)
+ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")
+ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+theme_minimal()
+bottom10_gender + scale_color_brewer(Paired)
+bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")
+bottom10_gender + scale_color_brewer(Paired)
+bottom10_gender + scale_color_brewer("paired")
+bottom10_gender + scale_color_hue()
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+recent_grads <- read.csv("recent-grads.csv")
+head(recent_grads)
+summary(recent_grads)
+str(recent_grads)
+na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+print(na_counts)
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Number of Specific Majors in Each Category")+
+ylab("Major Categories")+
+coord_flip()
+ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+geom_bar(stat = "summary")+
+coord_flip()+
+xlab("Major Category")+
+ylab("Number of Graduates")
+ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+geom_bar(stat= "summary")+
+coord_flip()+
+xlab("Major Category")+
+ylab("Number of Employed Graduates")
+recent_grads <- recent_grads %>%
+mutate(Employment_rate = Employed / Total)
+ggplot(recent_grads, aes(x=Major_category, y=Employment_rate))+
+geom_boxplot()+
+coord_flip()+
+xlab("Major Category")+
+ylab("Employment Rate")
+recent_grads <- recent_grads %>%
+mutate(Prop_full_time = Full_time/Employed)
+ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+geom_bar(stat="summary")+
+coord_flip()+
+xlab("Major Cateogry")+
+ylab("Proportion of Full-time Employees")
+top_10_salary <- recent_grads %>%
+select(Major, Median, Major_category, ShareWomen) %>%
+arrange(desc(Median)) %>%
+head(10)
+ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+geom_bar(stat="summary")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+bottom_10_salary <- recent_grads %>%
+select(Major, Median, Major_category, ShareWomen) %>%
+arrange(Median) %>%
+head(10)
+ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+geom_bar(stat="summary")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(recent_grads, aes(x=Major_category, y=Median))+
+geom_boxplot()+
+xlab("Major Category")+
+ylab("Median Salary")+
+coord_flip()
+ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+top10_gender <- ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")
+top10_gender + lims(fill=c(0,1))
+bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")
+bottom10_gender + lims(fill=c(0,1))
+library(viridis)
+install.packages("viridis")
+library(viridis)
+ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")+
+scale_fill_viridis()
+top10_gender + lims(fill=c(0,1)) + scale_fill_viridis()
+bottom10_gender + lims(fill=c(0,1)) + scale_fill_viridis()
+bottom10_gender + lims(fill=c(0,1))
+top10_gender <- ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+scale_fill_viridis()
+top10_gender + lims(fill=c(0,1)) + scale_fill_viridis()
+bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+scale_fill_viridis()
+bottom10_gender + lims(fill=c(0,1))
+bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+scale_fill_viridis(fill=c(0,1))
+bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+lims(fill=c(0,1))
+bottom10_gender <- ggplot(bottom_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+lims(fill=c(0,1))
+print(bottom10_gender)
+top10_gender <- ggplot(top_10_salary, aes(x=Major, y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+lims(fill=c(0,1))
+print(top10_gender)
+ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+install.packages("viridis")
+library(viridis)
+summary(recent_grads)
+install.packages("viridis")
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+summary(recent_grads)
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+ggplot(recent_grads, aes(x = reorder(-Major_category))+
+geom_bar()+
+xlab("Number of Specific Majors in Each Category")+
+ylab("Major Categories")+
+coord_flip()
+```
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Number of Specific Majors in Each Category")+
+ylab("Major Categories")+
+coord_flip()
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Major Categories")+
+ylab("Number of Specific Majors in Each Category")+
+coord_flip()
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Major Categories")+
+ylab("Number of Specific Majors in Each Category")+
+coord_flip()+
+arrange(desc)
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+recent_grads <- read.csv("recent-grads.csv")
+summary(recent_grads)
+na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+print(na_counts)
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Major Categories")+
+ylab("Number of Specific Majors in Each Category")+
+coord_flip()+
+arrange(desc)
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+recent_grads <- read.csv("recent-grads.csv")
+summary(recent_grads)
+na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+print(na_counts)
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Major Categories")+
+ylab("Number of Specific Majors in Each Category")+
+coord_flip()+
+arrange(desc)
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Major Categories")+
+ylab("Number of Specific Majors in Each Category")+
+coord_flip()+
+order(desc)
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Major Categories")+
+ylab("Number of Specific Majors in Each Category")+
+coord_flip()+
+arrange(desc(Major_category))
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+recent_grads <- read.csv("recent-grads.csv")
+summary(recent_grads)
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Major Categories")+
+ylab("Number of Specific Majors in Each Category")+
+coord_flip()+
+arrange(desc(Major_category))
+library(dplyr)
+ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Major Categories")+
+ylab("Number of Specific Majors in Each Category")+
+coord_flip()+
+arrange(desc(Major_category))
+majors <- ggplot(recent_grads, aes(x=Major_category))+
+geom_bar()+
+xlab("Major Categories")+
+ylab("Number of Specific Majors in Each Category")+
+coord_flip()
+majors %>%
+arrange(desc(Major_category))
+recent_grads$Major_category <- factor(recent_grads$Major_category, levels = unique(recent_grads$Major_category))
+ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]), fill = Major_category)) +
+geom_bar() +
+xlab("Major Categories") +
+ylab("Number of Specific Majors in Each Category") +
+coord_flip()
+ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category])) +
+geom_bar() +
+xlab("Major Categories") +
+ylab("Number of Specific Majors in Each Category") +
+coord_flip()
+ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]))) +
+ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category])) +
+geom_bar() +
+xlab("Major Categories") +
+ylab("Number of Specific Majors in Each Category") +
+coord_flip()
+ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]), fill = Major_category)) +
+recent_grads$Major_category <- factor(recent_grads$Major_category, levels = unique(recent_grads$Major_category))
+ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]), fill = Major_category)) +
+geom_bar() +
+xlab("Major Categories") +
+ylab("Number of Specific Majors in Each Category") +
+coord_flip()
+recent_grads$Major_category <- factor(recent_grads$Major_category, levels = unique(recent_grads$Major_category))
+ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]))) +
+geom_bar() +
+xlab("Major Categories") +
+ylab("Number of Specific Majors in Each Category") +
+coord_flip()
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dplyr)
+recent_grads <- read.csv("recent-grads.csv")
+summary(recent_grads)
+na_counts <- sapply(recent_grads, function(x) sum(is.na(x)))
+print(na_counts)
+recent_grads$Major_category <- factor(recent_grads$Major_category, levels = unique(recent_grads$Major_category))
+ggplot(recent_grads, aes(x = reorder(Major_category, -table(Major_category)[Major_category]))) +
+geom_bar() +
+xlab("Major Categories") +
+ylab("Number of Specific Majors in Each Category") +
+coord_flip()
+ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total))+
+geom_bar(stat = "summary")+
+coord_flip()+
+xlab("Major Category")+
+ylab("Number of Graduates")
+ggplot(recent_grads, aes(x= reorder(Major_category, -Employed), y = Employed))+
+geom_bar(stat= "summary")+
+coord_flip()+
+xlab("Major Category")+
+ylab("Number of Employed Graduates")
+recent_grads <- recent_grads %>%
+mutate(Employment_rate = Employed / Total)
+ggplot(recent_grads, aes(x=Major_category, y=Employment_rate))+
+geom_boxplot()+
+coord_flip()+
+xlab("Major Category")+
+ylab("Employment Rate")
+recent_grads <- recent_grads %>%
+mutate(Prop_full_time = Full_time/Employed)
+ggplot(recent_grads, aes(x= reorder(Major_category, -Prop_full_time), y=Prop_full_time))+
+geom_bar(stat="summary")+
+coord_flip()+
+xlab("Major Cateogry")+
+ylab("Proportion of Full-time Employees")
+top_10_salary <- recent_grads %>%
+select(Major, Median, Major_category, ShareWomen) %>%
+arrange(desc(Median)) %>%
+head(10)
+ggplot(top_10_salary, aes(x=Major, y=Median, fill = Major_category))+
+geom_bar(stat="summary")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+bottom_10_salary <- recent_grads %>%
+select(Major, Median, Major_category, ShareWomen) %>%
+arrange(Median) %>%
+head(10)
+ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+geom_bar(stat="summary")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(recent_grads, aes(x=Major_category, y=Median))+
+geom_boxplot()+
+xlab("Major Category")+
+ylab("Median Salary")+
+coord_flip()
+ggplot(recent_grads, aes((x=reorder(Major, -Median), y= Median, fill=ShareWomen))+
+ggplot(recent_grads, aes((x=reorder(Major, -Median), y= Median, fill=ShareWomen))+
+top_10_salary <- recent_grads %>%
+select(Major, Median, Major_category, ShareWomen) %>%
+arrange(desc(Median)) %>%
+head(10)
+ggplot(top_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = Major_category))+
+geom_bar(stat="summary")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+ggplot(top_10_salary, aes(x=reorder(Major, Median), y=Median, fill = Major_category))+
+geom_bar(stat="summary")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Major Category")
+top10_gender <- ggplot(top_10_salary, aes(x=reorder(Major, Median), y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+lims(fill=c(0,1))
+print(top10_gender)
+bottom10_gender <- ggplot(bottom_10_salary, aes(x=reorder(Major, -Median), y=Median, fill = ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x="Major", y="Median Salary", fill = "Proportion of Women")+
+lims(fill=c(0,1))
+print(bottom10_gender)
+ggplot(recent_grads, aes((x=Major, y= Median, fill=ShareWomen))+
+ggplot(recent_grads, aes(x=Major, y= Median, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+ggplot(recent_grads, aes(x=Major_category, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")
+ggplot(recent_grads, aes(x = reorder(Major_category, -Total), y = Total, fill= ShareWomen))+
+geom_bar(stat = "summary")+
+coord_flip()+
+xlab("Major Category")+
+ylab("Number of Graduates")
+ggplot(recent_grads, aes(x=Major_category, y= Median, fill=ShareWomen))+
+geom_bar(stat="identity")+
+coord_flip()+
+labs(x= "Major Category", y = "Median Salary", fill="Proportion of Women")

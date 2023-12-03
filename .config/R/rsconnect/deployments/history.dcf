@@ -1,0 +1,40 @@
+name: eda_code_notebook
+title: EDA_Code_Notebook
+username: Amy Chen
+account: Amy Chen
+server: posit.cloud
+hostUrl: https://api.posit.cloud/v1
+appId: 6811386
+bundleId: 7814444
+url: https://posit.cloud/content/6811386
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+appPath: /cloud/project/EDA_Code_Notebook.Rmd
+
+name: eda_code_notebook
+title: EDA_Code_Notebook
+username: Amy Chen
+account: Amy Chen
+server: posit.cloud
+hostUrl: https://api.posit.cloud/v1
+appId: 6811386
+bundleId:
+url: https://posit.cloud/content/6811386
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+appPath: /cloud/project/EDA_Code_Notebook.Rmd
+
+name: Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+envVars: rpubs.com
+hostUrl: https://api.rpubs.com/api/v1/document/1093354/3eed4deef26b4d70bb5558389b4c1266
+appId: https://api.rpubs.com/api/v1/document/1093354/3eed4deef26b4d70bb5558389b4c1266
+bundleId: http://rpubs.com/publish/claim/1093354/a7a4b3923b424df6949dc675761a6e58
+url: 1696482053.47187
+version: 1
+appPath: /cloud/project/Initial Code.Rmd
