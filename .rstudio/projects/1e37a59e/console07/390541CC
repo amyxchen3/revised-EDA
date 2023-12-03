@@ -135,3 +135,12 @@ remote: Support for password authentication was removed on August 13, 2021.
 remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
 fatal: Authentication failed for 'https://github.com/amyxchen3/revised-EDA.git/'
 ]0;/home/r1755190~$ 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[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kh[Kgit add .
+]0;/home/r1755190~$ i[Kgit commit -m "Initial Commit"
+[master 497b33d] Initial Commit
+ 1 file changed, 78 insertions(+), 1 deletion(-)
+]0;/home/r1755190~$ git push -u origin master
+Username for 'https://github.com': amyxchen3
+Password for 'https://amyxchen3@github.com': 
+remote: Permission to amyxchen3/revised-EDA.git denied to amyxchen3.
+fatal: unable to access 'https://github.com/amyxchen3/revised-EDA.git/': The requested URL returned error: 403
+]0;/home/r1755190~$ ad[K[Kgit add.[K . 
