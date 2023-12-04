@@ -418,3 +418,11 @@
 2023-12-03T04:38:21.700339Z [rsession-r1755190] INFO No keybindings/rstudio_bindings.json found at /etc/rstudio/keybindings/rstudio_bindings.json
 2023-12-03T04:38:21.705433Z [rsession-r1755190] INFO No keybindings/editor_bindings.json found at /etc/rstudio/keybindings/editor_bindings.json
 2023-12-03T04:38:23.125376Z [rsession-r1755190] ERROR system error 84 (Invalid or incomplete multibyte or wide character) [str: one’s, len: 7, from: UTF-8, to: ISO8859-1]; OCCURRED AT rstudio::core::Error rstudio::r::util::{anonymous}::iconvstrImpl(const string&, const string&, const string&, bool, std::__cxx11::string*) src/cpp/r/RUtil.cpp:268; LOGGED FROM: rstudio::core::Error rstudio::session::modules::spelling::{anonymous}::checkSpelling(const rstudio::core::json::JsonRpcRequest&, rstudio::core::json::JsonRpcResponse*) src/cpp/session/modules/SessionSpelling.cpp:225
+2023-12-03T05:20:28.042445Z [rsession-r1755190] INFO Lowered CPU priority during suspend
+2023-12-04T21:18:24.294569Z [rsession-r1755190] INFO Reading rsession configuration from '/etc/rstudio/rsession.conf'
+2023-12-04T21:18:24.494895Z [rsession-r1755190] INFO Set CRAN URL for session to 'https://cran.rstudio.com/' (source: preference defaults)
+2023-12-04T21:18:29.349204Z [rsession-r1755190] INFO No admin notifications found at /etc/rstudio/notifications.conf
+2023-12-04T21:18:31.017829Z [rsession-r1755190] INFO No keybindings/rstudio_bindings.json found at /etc/rstudio/keybindings/rstudio_bindings.json
+2023-12-04T21:18:31.023693Z [rsession-r1755190] INFO No keybindings/editor_bindings.json found at /etc/rstudio/keybindings/editor_bindings.json
+2023-12-04T21:18:31.029258Z [rsession-r1755190] INFO No keybindings/addins.json found at /etc/rstudio/keybindings/addins.json
+2023-12-04T21:32:52.454569Z [rsession-r1755190] ERROR system error 84 (Invalid or incomplete multibyte or wide character) [str: one’s, len: 7, from: UTF-8, to: ISO8859-1]; OCCURRED AT rstudio::core::Error rstudio::r::util::{anonymous}::iconvstrImpl(const string&, const string&, const string&, bool, std::__cxx11::string*) src/cpp/r/RUtil.cpp:268; LOGGED FROM: rstudio::core::Error rstudio::session::modules::spelling::{anonymous}::checkSpelling(const rstudio::core::json::JsonRpcRequest&, rstudio::core::json::JsonRpcResponse*) src/cpp/session/modules/SessionSpelling.cpp:225

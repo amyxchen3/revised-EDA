@@ -144,3 +144,21 @@ Password for 'https://amyxchen3@github.com':
 remote: Permission to amyxchen3/revised-EDA.git denied to amyxchen3.
 fatal: unable to access 'https://github.com/amyxchen3/revised-EDA.git/': The requested URL returned error: 403
 ]0;/home/r1755190~$ ad[K[Kgit add.[K . 
+]0;/home/r1755190~$ git commit -m "Intial Commit" 
+[master 0cea754] Intial Commit
+ 1 file changed, 9 insertions(+)
+]0;/home/r1755190~$ git push -u origin master
+Username for 'https://github.com': amyxchen3
+Password for 'https://amyxchen3@github.com': 
+remote: Permission to amyxchen3/revised-EDA.git denied to amyxchen3.
+fatal: unable to access 'https://github.com/amyxchen3/revised-EDA.git/': The requested URL returned error: 403
+git congi[K[Kfig -- list --[C[C[C[C[C[C[Cpush -u origin master[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit config --list --show-origin
+[?1h=file:/home/r1755190/.gitconfig  user.email=amy.chen3@emory.edu[m
+file:/home/r1755190/.gitconfig  user.name=amyxchen3[m
+file:.git/config        core.repositoryformatversion=0[m
+file:.git/config        core.filemode=true[m
+file:.git/config        core.bare=false[m
+file:.git/config        core.logallrefupdates=true[m
+file:.git/config        remote.origin.url=https://github.com/amyxchen3/revised-EDA.git[m
+file:.git/config        remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*[m
+[K[?1l>]0;/home/r1755190~$ git add .
